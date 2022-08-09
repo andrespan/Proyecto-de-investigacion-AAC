@@ -1,0 +1,22 @@
+---
+title: "Colaboración con Paulina"
+output: html_notebook
+---
+
+## Download Genomes of Leuwenhoekellia
+
+The genomes are downloaded with ncbi-download-genomes script
+
+```{bash}
+conda activate ncbi-genome-download
+ncbi-genome-download --genera "Leeuwenhoekiella" bacteria
+```
+
+Then we need to change the names of the downloaded genomes
+
+```{bash}
+ls *fna |while read line; do fullname=$(head -1 $line);namecut=$(echo $fullname|cut -d ' ' -f2,3); string=${namecut// /_}; accesion=$(echo $line|cut -d'_' -f1,2|cut -d'.' -f1);newname=$(echo $string\_$accesion.fna);mv "${line}" "${newname}"; done
+
+```
+
+
