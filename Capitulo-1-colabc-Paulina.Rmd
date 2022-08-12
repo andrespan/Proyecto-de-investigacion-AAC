@@ -11,12 +11,67 @@ The genomes are downloaded with ncbi-download-genomes script
 conda activate ncbi-genome-download
 ncbi-genome-download --genera "Leeuwenhoekiella" bacteria
 ```
+This is going to dowload only 14 genomes that are on refseq
+To dowload all 41 genomes of Leeuwenhoekiella we run:
+```{bash}
+conda activate ncbi-genome-download
+ ncbi-genome-download -s genbank --formats fasta --genera "Leeuwenhoekiella,uncultured Leeuwenhoekiella" bacteria
+```
+note:2 genomes("uncultured") are assembled from metagenomes
+For download an outgroup:
+GCF_013343195.2 Flavobacterium psychrophilum    160401-1/5N
+```{bash}
 
+ ncbi-genome-download --formats fasta -T 96345 --strain 160401-1/5N bacteria
+```
+Unpackage the genomes and put it in the same directory:
+```{bash}
+ls */*/*/*gz | wc -l
+mv */*/*/*gz .
+gunzip *gz
+rm -r genbank
+rm -r refseq
+```
 Then we need to change the names of the downloaded genomes
 
 ```{bash}
 ls *fna |while read line; do fullname=$(head -1 $line);namecut=$(echo $fullname|cut -d ' ' -f2,3); string=${namecut// /_}; accesion=$(echo $line|cut -d'_' -f1,2|cut -d'.' -f1);newname=$(echo $string\_$accesion.fna);mv "${line}" "${newname}"; done
 
 ```
+for change names to MAG:* files
+```{bash}
 
+ ls MAG:* |while read line; do fullname=$(head -1 $line);namecut=$(echo $fullname|cut -d ' ' -f3,6|cut -d '_' -f1); string=${namecut// /_}; accesion=$(echo $line|cut -d'_' -f4,5|cut -d'.' -f1);newname=$(echo $string\_$accesion.fna);mv "${line}" "${newname}"; done
+
+```
+
+```{bash}
+ls *sp.* |while read line; do fullname=$(head -1 $line);namecut=$(echo $fullname|cut -d ' ' -f2,4); string=${namecut// /_}; accesion=$(echo $line|cut -d'_' -f3,4|cut -d'.' -f1);newname=$(echo $string\_$accesion.fna);mv "${line}" "${newname}"; done
+
+ls MAG_* |while read line; do fullname=$(head -1 $line);namecut=$(echo $fullname|cut -d ' ' -f4,5,7|cut -d '_' -f1); string=${namecut// /_}; accesion=$(echo $line|cut -d'_' -f4,5|cut -d'.' -f1);newname=$(echo $string\_$accesion.fna);mv "${line}" "${newname}"; done
+
+```
+Anottating genomes with  prokka
+
+for *_a-p minus letters
+```{bash}
+ls [A-Z]*_[a-p]* | while read line; do specie=$(echo "$line"|cut -d'_' -f2); genera=$(echo "$line"|cut -d '_' -f1); isolate=$(echo $line|cut -d '_' -f3,4|cut -d '.' -f1); prokka $line --kingdom Bacteria -genus "${genera}" -species "${specie}" --addgenes --usegenus --prefix ${genera}\_${specie}\_"${isolate}"\.prokka --outdir "${genera}"\_"${specie}"\_"${isolate}"\_prokka; done
+```
+
+for Leeuwenhoekiella_[A-Z]*
+```{bash}
+ls Leeuwenhoekiella_[A-Z]* | while read line; do specie=$(echo "$line"|cut -d'_' -f2); genera=$(echo "$line"|cut -d '_' -f1); isolate=$(echo $line|cut -d '_' -f3); prokka $line --kingdom Bacteria -genus "${genera}" --addgenes --usegenus --prefix ${genera}\_${specie}\.prokka --outdir "${genera}"\_"${specie}"\_prokka; done
+```
+
+```
+
+for *_sp*
+```{bash}
+ ls Leeuwenhoekiella_sp* | while read line; do specie=$(echo "$line"|cut -d'_' -f2); genera=$(echo "$line"|cut -d '_' -f1); isolate=$(echo $line|cut -d '_' -f3); prokka $line --kingdom Bacteria -genus "${genera}" --addgenes --usegenus --prefix ${genera}\_${isolate}\.prokka --outdir "${genera}"\_"${isolate}"\_prokka; done
+
+```
+for uncultured_lee
+```{bash}
+ls uncultured_Leeuwenhoekiella_ERR59* | while read line; do specie=$(echo "$line"|cut -d'_' -f3); genera=$(echo "$line"|cut -d '_' -f2); isolate=$(echo $line|cut -d '_' -f1); prokka $line --kingdom Bacteria -genus "${genera}" --addgenes --usegenus --prefix ${genera}\_${specie}\_"${isolate}"\.prokka --outdir "${genera}"\_${specie}\_"${isolate}"\_prokka; done
+```
 
