@@ -16,9 +16,10 @@ path <- readLines('Datos/5mSIPHEX1_0_short.faa')
 #imprime hasta la segunda linea del archivo
 name <-path[grep(identificador1,path)]
 name
-substring (name, 1, 32)
-substring (name, 32, nchar)  
-name
+ID <- substring (name, 1, 32)
+coordenadas <- substring (name, 32, 56)  
+ID
+coordenadas
 #name_numeric  <- as.numeric(as.factor(name))
 #sequence <- for (name in path) {nchar(identificador1)+1}
 sequence
