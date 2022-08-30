@@ -75,3 +75,16 @@ for uncultured_lee
 ls uncultured_Leeuwenhoekiella_ERR59* | while read line; do specie=$(echo "$line"|cut -d'_' -f3); genera=$(echo "$line"|cut -d '_' -f2); isolate=$(echo $line|cut -d '_' -f1); prokka $line --kingdom Bacteria -genus "${genera}" --addgenes --usegenus --prefix ${genera}\_${specie}\_"${isolate}"\.prokka --outdir "${genera}"\_${specie}\_"${isolate}"\_prokka; done
 ```
 
+#Run evomining with
+```{bash}
+docker run --rm -i -t -v $(pwd):/var/www/html/EvoMining/exchange -p 8000 nselem/evomining:latest /bin/bash
+```
+
+```{docker}
+#perl startEvoMining.pl -g GENOMES -r  Corason_Rast.IDs
+```
+
+and open in browser
+
+http://132.248.196.38:8000/EvoMining/html/index.html
+

@@ -1,0 +1,350 @@
+# gene name                      KO     thrshld  score   E-value KO definition
+#------------------------------- ------ ------- ------ --------- ---------------------
+  5mSIPHEX1_0-scaffold_1104_c1_1 -            -      -         - -
+  5mSIPHEX1_0-scaffold_1104_c1_2 K10441  704.27  628.6  2.9e-189 ribose transport system ATP-binding protein [EC:7.5.2.7]
+* 5mSIPHEX1_0-scaffold_1104_c1_2 K02056  616.97  621.7  1.8e-187 simple sugar transport system ATP-binding protein [EC:7.5.2.-]
+  5mSIPHEX1_0-scaffold_1104_c1_2 K10562  700.33  561.7  1.8e-169 rhamnose transport system ATP-binding protein [EC:7.5.2.-]
+  5mSIPHEX1_0-scaffold_1104_c1_2 K17215  727.03  505.5  2.1e-152 inositol transport system ATP-binding protein
+  5mSIPHEX1_0-scaffold_1104_c1_2 K23537  587.53  505.4  3.9e-152 general nucleoside transport system ATP-binding protein
+  5mSIPHEX1_0-scaffold_1104_c1_2 K10820  639.97  487.3  6.9e-147 galactofuranose transport system ATP-binding protein [EC:7.5.2.9]
+  5mSIPHEX1_0-scaffold_1104_c1_2 K10539  662.13  484.4  4.7e-146 L-arabinose transport system ATP-binding protein [EC:7.5.2.12]
+  5mSIPHEX1_0-scaffold_1104_c1_2 K23547  607.70  479.9  1.2e-144 sugar transport system ATP-binding protein
+  5mSIPHEX1_0-scaffold_1104_c1_2 K17204  630.70  450.2    1e-135 erythritol transport system ATP-binding protein
+  5mSIPHEX1_0-scaffold_1104_c1_2 K17210  683.83  448.4  4.8e-135 inositol transport system ATP-binding protein
+  5mSIPHEX1_0-scaffold_1104_c1_2 K10558  601.57  448.3  4.9e-135 AI-2 transport system ATP-binding protein
+  5mSIPHEX1_0-scaffold_1104_c1_2 K17207  702.93  444.4  7.7e-134 putative xylitol transport system ATP-binding protein
+  5mSIPHEX1_0-scaffold_1104_c1_2 K10551  730.80  441.4  6.5e-133 D-allose transport system ATP-binding protein [EC:7.5.2.8]
+  5mSIPHEX1_0-scaffold_1104_c1_2 K10542  739.33  439.0  3.4e-132 methyl-galactoside transport system ATP-binding protein [EC:7.5.2.11]
+  5mSIPHEX1_0-scaffold_1104_c1_2 K10548  745.87  426.0  2.6e-128 putative multiple sugar transport system ATP-binding protein [EC:7.5.2.-]
+  5mSIPHEX1_0-scaffold_1104_c1_2 K23513  540.57  368.4  9.6e-111 riboflavin transport system ATP-binding protein
+  5mSIPHEX1_0-scaffold_1104_c1_2 K10554  403.67  276.0     5e-83 fructose transport system ATP-binding protein
+  5mSIPHEX1_0-scaffold_1104_c1_2 K10545  338.50  262.2   1.4e-78 D-xylose transport system ATP-binding protein [EC:7.5.2.10]
+  5mSIPHEX1_0-scaffold_1104_c1_2 K02031  420.27  212.9   1.6e-63 peptide/nickel transport system ATP-binding protein
+  5mSIPHEX1_0-scaffold_1104_c1_2 K01995  307.80  205.2   3.1e-61 branched-chain amino acid transport system ATP-binding protein
+  5mSIPHEX1_0-scaffold_1104_c1_2 K24040  606.17  201.3     4e-60 energy-coupling factor transport system permease/ATP-binding protein [EC:7.-.-.-]
+  5mSIPHEX1_0-scaffold_1104_c1_2 K01996  319.37  188.1   5.9e-56 branched-chain amino acid transport system ATP-binding protein
+  5mSIPHEX1_0-scaffold_1104_c1_2 K10822  288.97  187.6   3.6e-56 nonpolar-amino-acid-transporting ATPase [EC:7.4.2.2]
+  5mSIPHEX1_0-scaffold_1104_c1_2 K11072  499.10  179.2   2.5e-53 spermidine/putrescine transport system ATP-binding protein [EC:7.6.2.11]
+  5mSIPHEX1_0-scaffold_1104_c1_2 K01990  261.13  176.7   1.5e-52 ABC-2 type transport system ATP-binding protein
+  5mSIPHEX1_0-scaffold_1104_c1_2 K10112  555.43  173.4   1.7e-51 multiple sugar transport system ATP-binding protein [EC:7.5.2.-]
+  5mSIPHEX1_0-scaffold_1104_c1_2 K16014  925.07  165.9   2.1e-49 ATP-binding cassette, subfamily C, bacterial CydCD
+  5mSIPHEX1_0-scaffold_1104_c1_2 K05685  570.20  165.9   2.1e-49 macrolide transport system ATP-binding/permease protein [EC:7.6.2.-]
+  5mSIPHEX1_0-scaffold_1104_c1_2 K02028  374.87  165.6   2.9e-49 polar amino acid transport system ATP-binding protein [EC:7.4.2.1]
+  5mSIPHEX1_0-scaffold_1104_c1_2 K25189  866.87  160.9   7.7e-48 pyoluteorin transport system ATP-binding protein
+  5mSIPHEX1_0-scaffold_1104_c1_2 K13892  917.57  160.1   1.3e-47 glutathione transport system ATP-binding protein
+  5mSIPHEX1_0-scaffold_1104_c1_2 K02065  291.53  158.6   3.1e-47 phospholipid/cholesterol/gamma-HCH transport system ATP-binding protein
+  5mSIPHEX1_0-scaffold_1104_c1_2 K24712 1139.33  157.8   5.2e-47 D-galactose transport system ATP-binding protein [EC:7.5.2.11]
+  5mSIPHEX1_0-scaffold_1104_c1_2 K02049  344.50  156.3   2.4e-46 NitT/TauT family transport system ATP-binding protein
+  5mSIPHEX1_0-scaffold_1104_c1_2 K10191  571.43  154.4   6.7e-46 lactose/L-arabinose transport system ATP-binding protein
+  5mSIPHEX1_0-scaffold_1104_c1_2 K15578  391.17  152.8   1.9e-45 nitrate/nitrite transport system ATP-binding protein [EC:7.3.2.4]
+  5mSIPHEX1_0-scaffold_1104_c1_2 K06857  265.70  152.6     2e-45 tungstate transport system ATP-binding protein [EC:7.3.2.6]
+  5mSIPHEX1_0-scaffold_1104_c1_2 K25099  868.30  152.6   2.1e-45 alpha-galactoside transport system ATP-binding protein
+  5mSIPHEX1_0-scaffold_1104_c1_2 K11607  411.13  151.0   6.1e-45 manganese/iron transport system ATP-binding protein
+  5mSIPHEX1_0-scaffold_1104_c1_2 K15497  382.23  149.9     2e-44 molybdate/tungstate transport system ATP-binding protein [EC:7.3.2.5 7.3.2.6]
+  5mSIPHEX1_0-scaffold_1104_c1_2 K10111  531.40  149.9   1.8e-44 multiple sugar transport system ATP-binding protein [EC:7.5.2.-]
+  5mSIPHEX1_0-scaffold_1104_c1_2 K02062  405.87  149.4   2.9e-44 thiamine transport system ATP-binding protein [EC:7.6.2.15]
+  5mSIPHEX1_0-scaffold_1104_c1_2 K09810  331.50  148.8   3.5e-44 lipoprotein-releasing system ATP-binding protein [EC:7.6.2.-]
+  5mSIPHEX1_0-scaffold_1104_c1_2 K25144  371.33  148.0     6e-44 linearmycin/streptolysin S transport system ATP-binding protein
+  5mSIPHEX1_0-scaffold_1104_c1_2 K02013  242.83  147.1   1.3e-43 iron complex transport system ATP-binding protein [EC:7.2.2.-]
+  5mSIPHEX1_0-scaffold_1104_c1_2 K02052  489.97  144.2     1e-42 putative spermidine/putrescine transport system ATP-binding protein
+  5mSIPHEX1_0-scaffold_1104_c1_2 K09697  284.70  143.3   1.2e-42 sodium transport system ATP-binding protein [EC:7.2.2.4]
+  5mSIPHEX1_0-scaffold_1104_c1_2 K10830  374.70  143.0   1.7e-42 manganese/zinc transport system ATP-binding protein [EC:7.2.2.5]
+  5mSIPHEX1_0-scaffold_1104_c1_2 K11962  371.63  142.6   2.6e-42 urea transport system ATP-binding protein
+  5mSIPHEX1_0-scaffold_1104_c1_2 K02017  358.23  142.6   2.9e-42 molybdate transport system ATP-binding protein [EC:7.3.2.5]
+  5mSIPHEX1_0-scaffold_1104_c1_2 K02003  285.33  141.3   7.3e-42 putative ABC transport system ATP-binding protein
+  5mSIPHEX1_0-scaffold_1104_c1_2 K10544  413.00  141.2   7.4e-42 D-xylose transport system permease protein
+  5mSIPHEX1_0-scaffold_1104_c1_2 K01552  411.40  141.0   7.9e-42 energy-coupling factor transport system ATP-binding protein [EC:7.-.-.-]
+  5mSIPHEX1_0-scaffold_1104_c1_2 K23060  428.03  140.7   1.1e-41 arginine/lysine/histidine transport system ATP-binding protein [EC:7.4.2.1]
+  5mSIPHEX1_0-scaffold_1104_c1_2 K02041  264.37  138.6   4.4e-41 phosphonate transport system ATP-binding protein [EC:7.3.2.2]
+  5mSIPHEX1_0-scaffold_1104_c1_2 K10199  506.73  138.5   4.6e-41 glucose/arabinose transport system ATP-binding protein
+  5mSIPHEX1_0-scaffold_1104_c1_2 K17314  480.87  138.5   3.7e-41 trehalose transport system ATP-binding protein
+  5mSIPHEX1_0-scaffold_1104_c1_2 K10038  401.77  138.1     4e-41 glutamine transport system ATP-binding protein [EC:7.4.2.1]
+  5mSIPHEX1_0-scaffold_1104_c1_2 K02010  456.30  136.7   2.2e-40 iron(III) transport system ATP-binding protein [EC:7.2.2.7]
+  5mSIPHEX1_0-scaffold_1104_c1_2 K11963  277.60  135.9   1.8e-40 urea transport system ATP-binding protein
+  5mSIPHEX1_0-scaffold_1104_c1_2 K09695  350.90  134.3   8.2e-40 lipooligosaccharide transport system ATP-binding protein
+  5mSIPHEX1_0-scaffold_1104_c1_2 K02045  435.00  134.1   1.2e-39 sulfate/thiosulfate transport system ATP-binding protein [EC:7.3.2.3]
+  5mSIPHEX1_0-scaffold_1104_c1_2 K09817  283.67  133.4   2.2e-39 zinc transport system ATP-binding protein [EC:7.2.2.20]
+  5mSIPHEX1_0-scaffold_1104_c1_2 K16786  348.37  132.2   5.1e-39 energy-coupling factor transport system ATP-binding protein [EC:7.-.-.-]
+  5mSIPHEX1_0-scaffold_1104_c1_2 K02032  412.73  131.5   6.3e-39 peptide/nickel transport system ATP-binding protein
+  5mSIPHEX1_0-scaffold_1104_c1_2 K10008  415.97  131.0     6e-39 glutamate transport system ATP-binding protein [EC:7.4.2.1]
+  5mSIPHEX1_0-scaffold_1104_c1_2 K15555  340.23  130.5   1.6e-38 sulfonate transport system ATP-binding protein [EC:7.6.2.14]
+  5mSIPHEX1_0-scaffold_1104_c1_2 K19340  270.77  129.9   2.3e-38 Cu-processing system ATP-binding protein
+  5mSIPHEX1_0-scaffold_1104_c1_2 K10017  464.87  128.8     3e-38 histidine transport system ATP-binding protein [EC:7.4.2.1]
+  5mSIPHEX1_0-scaffold_1104_c1_2 K06861  248.53  128.6   4.8e-38 lipopolysaccharide export system ATP-binding protein [EC:7.5.2.5]
+  5mSIPHEX1_0-scaffold_1104_c1_2 K25152  331.80  127.8   9.3e-38 gliding motility-associated transport system ATP-binding protein
+  5mSIPHEX1_0-scaffold_1104_c1_2 K05847  349.80  127.3   1.6e-37 osmoprotectant transport system ATP-binding protein [EC:7.6.2.9]
+  5mSIPHEX1_0-scaffold_1104_c1_2 K09814  298.20  127.0   1.2e-37 hemin transport system ATP-binding protein [EC:7.6.2.-]
+  5mSIPHEX1_0-scaffold_1104_c1_2 K16784  278.80  126.5     2e-37 biotin transport system ATP-binding protein [EC:7.6.2.-]
+  5mSIPHEX1_0-scaffold_1104_c1_2 K02071  334.70  126.4     3e-37 D-methionine transport system ATP-binding protein
+  5mSIPHEX1_0-scaffold_1104_c1_2 K11957  424.13  126.2   1.9e-37 neutral amino acid transport system ATP-binding protein
+  5mSIPHEX1_0-scaffold_1104_c1_2 K06148  577.93  126.0   2.9e-37 ATP-binding cassette, subfamily C, bacterial
+  5mSIPHEX1_0-scaffold_1104_c1_2 K25028  360.83  125.7   3.9e-37 cobalamin transport system ATP-binding protein [EC:7.6.2.8]
+  5mSIPHEX1_0-scaffold_1104_c1_2 K11076  539.03  125.4   4.5e-37 putrescine transport system ATP-binding protein [EC:7.6.2.16]
+  5mSIPHEX1_0-scaffold_1104_c1_2 K10235  556.63  123.8   1.3e-36 alpha-glucoside transport system ATP-binding protein
+  5mSIPHEX1_0-scaffold_1104_c1_2 K11050  364.77  123.7   1.4e-36 multidrug/hemolysin transport system ATP-binding protein
+  5mSIPHEX1_0-scaffold_1104_c1_2 K20490  293.90  123.4   1.5e-36 lantibiotic transport system ATP-binding protein
+  5mSIPHEX1_0-scaffold_1104_c1_2 K09972  444.40  123.2   1.5e-36 general L-amino acid transport system ATP-binding protein [EC:7.4.2.1]
+  5mSIPHEX1_0-scaffold_1104_c1_2 K09820  338.97  123.1   2.4e-36 manganese/iron transport system ATP-binding protein
+  5mSIPHEX1_0-scaffold_1104_c1_2 K02006  329.30  122.7   3.1e-36 cobalt/nickel transport system ATP-binding protein
+  5mSIPHEX1_0-scaffold_1104_c1_2 K25148  375.90  122.5   3.4e-36 beta-exotoxin I transport system ATP-binding protein
+  5mSIPHEX1_0-scaffold_1104_c1_2 K17240  492.00  122.3   3.3e-36 inositol-phosphate transport system ATP-binding protein
+  5mSIPHEX1_0-scaffold_1104_c1_2 K12541  666.20  122.0     3e-36 ATP-binding cassette, subfamily C, bacterial LapB
+  5mSIPHEX1_0-scaffold_1104_c1_2 K09812  287.47  121.7   6.2e-36 cell division transport system ATP-binding protein
+  5mSIPHEX1_0-scaffold_1104_c1_2 K25170  438.77  121.6   6.2e-36 heterocyst specific system ATP-binding protein
+  5mSIPHEX1_0-scaffold_1104_c1_2 K10004  412.50  121.5   4.6e-36 glutamate/aspartate transport system ATP-binding protein [EC:7.4.2.1]
+  5mSIPHEX1_0-scaffold_1104_c1_2 K18895 2210.03  121.3   4.5e-36 ATP-binding cassette, subfamily B, salmochelin/enterobactin exporter
+  5mSIPHEX1_0-scaffold_1104_c1_2 K10041  409.20  120.1   1.3e-35 aspartate/glutamate/glutamine transport system ATP-binding protein [EC:7.4.2.1]
+  5mSIPHEX1_0-scaffold_1104_c1_2 K25182  474.97  119.6   2.6e-35 drug efflux transport system ATP-binding protein
+  5mSIPHEX1_0-scaffold_1104_c1_2 K20344  775.80  119.4   2.1e-35 ATP-binding cassette, subfamily C, bacteriocin exporter
+  5mSIPHEX1_0-scaffold_1104_c1_2 K02193  195.97  118.9   5.1e-35 heme exporter protein A [EC:7.6.2.5]
+  5mSIPHEX1_0-scaffold_1104_c1_2 K06158  527.67  118.9     4e-35 ATP-binding cassette, subfamily F, member 3
+  5mSIPHEX1_0-scaffold_1104_c1_2 K17076  386.97  118.9   3.4e-35 putative lysine transport system ATP-binding protein
+  5mSIPHEX1_0-scaffold_1104_c1_2 K25150  365.63  118.8   4.4e-35 polyether ionophore transport system ATP-binding protein
+  5mSIPHEX1_0-scaffold_1104_c1_2 K06147  618.57  118.4   6.6e-35 ATP-binding cassette, subfamily B, bacterial
+  5mSIPHEX1_0-scaffold_1104_c1_2 K20485  590.57  118.0   6.8e-35 ATP-binding cassette, subfamily B, bacterial NisT/SpaT
+  5mSIPHEX1_0-scaffold_1104_c1_2 K23064  410.47  117.8   6.8e-35 hydroxyproline transport system ATP-binding protein [EC:7.4.2.1]
+  5mSIPHEX1_0-scaffold_1104_c1_2 K16787  342.20  117.2   1.4e-34 energy-coupling factor transport system ATP-binding protein [EC:7.-.-.-]
+  5mSIPHEX1_0-scaffold_1104_c1_2 K00400  403.27  117.0   1.5e-34 methyl coenzyme M reductase system, component A2
+  5mSIPHEX1_0-scaffold_1104_c1_2 K25141  465.27  117.0   1.6e-34 daunorubicin/doxorubicin transport system ATP-binding protein
+  5mSIPHEX1_0-scaffold_1104_c1_2 K17325  453.83  117.0   1.5e-34 glycerol transport system ATP-binding protein
+  5mSIPHEX1_0-scaffold_1104_c1_2 K05816  527.63  117.0   1.9e-34 sn-glycerol 3-phosphate transport system ATP-binding protein [EC:7.6.2.10]
+  5mSIPHEX1_0-scaffold_1104_c1_2 K02074  295.83  116.8     2e-34 zinc/manganese transport system ATP-binding protein
+  5mSIPHEX1_0-scaffold_1104_c1_2 K11958  391.93  116.4   1.9e-34 neutral amino acid transport system ATP-binding protein
+  5mSIPHEX1_0-scaffold_1104_c1_2 K20459  368.90  114.8   9.7e-34 lantibiotic transport system ATP-binding protein
+  5mSIPHEX1_0-scaffold_1104_c1_2 K11080  482.60  114.5   8.4e-34 mannopine transport system ATP-binding protein
+  5mSIPHEX1_0-scaffold_1104_c1_2 K05648 1789.30  114.2   5.6e-34 ATP-binding cassette, subfamily A (ABC1), member 5
+  5mSIPHEX1_0-scaffold_1104_c1_2 K10834  309.03  113.9   1.2e-33 heme transport system ATP-binding protein [EC:7.6.2.5]
+  5mSIPHEX1_0-scaffold_1104_c1_2 K16963  393.50  113.4   1.6e-33 putative S-methylcysteine transport system ATP-binding protein
+  5mSIPHEX1_0-scaffold_1104_c1_2 K11952 1209.50  112.9   2.6e-33 bicarbonate transport system ATP-binding protein [EC:7.3.2.-]
+  5mSIPHEX1_0-scaffold_1104_c1_2 K11706  388.67  112.7   3.5e-33 iron/zinc/manganese/copper transport system ATP-binding protein
+  5mSIPHEX1_0-scaffold_1104_c1_2 K23184  376.00  111.4   6.2e-33 ferric citrate transport system ATP-binding protein [EC:7.2.2.18]
+  5mSIPHEX1_0-scaffold_1104_c1_2 K10831  341.90  111.3     8e-33 taurine transport system ATP-binding protein [EC:7.6.2.7]
+  5mSIPHEX1_0-scaffold_1104_c1_2 K02068  236.17  110.8   1.3e-32 UDP-glucose/iron transport system ATP-binding protein
+  5mSIPHEX1_0-scaffold_1104_c1_2 K05833  193.47  110.7   1.2e-32 putative tryptophan/tyrosine transport system ATP-binding protein
+  5mSIPHEX1_0-scaffold_1104_c1_2 K12292 1402.20  110.6   1.2e-32 ATP-binding cassette, subfamily C, bacterial, competence factor transporting protein [EC:3.4.22.-]
+  5mSIPHEX1_0-scaffold_1104_c1_2 K10010  378.63  110.6   1.3e-32 L-cystine transport system ATP-binding protein [EC:7.4.2.1]
+  5mSIPHEX1_0-scaffold_1104_c1_2 K16960  401.83  110.4   1.3e-32 L-cystine transport system ATP-binding protein [EC:7.4.2.1]
+  5mSIPHEX1_0-scaffold_1104_c1_2 K10824  308.67  109.7   2.6e-32 nickel transport system ATP-binding protein [EC:7.2.2.11]
+  5mSIPHEX1_0-scaffold_1104_c1_2 K10000  338.00  108.3   6.5e-32 arginine transport system ATP-binding protein [EC:7.4.2.1]
+  5mSIPHEX1_0-scaffold_1104_c1_2 K17063  437.63  108.2   6.1e-32 arginine/lysine/histidine/glutamine transport system ATP-binding protein [EC:7.4.2.1]
+  5mSIPHEX1_0-scaffold_1104_c1_2 K25115  345.43  108.2   6.9e-32 heme transport system ATP-binding protein [EC:7.6.2.5]
+  5mSIPHEX1_0-scaffold_1104_c1_2 K15600  277.40  107.6   1.1e-31 putative hydroxymethylpyrimidine transport system ATP-binding protein
+  5mSIPHEX1_0-scaffold_1104_c1_2 K19309  413.20  107.3   1.5e-31 bacitracin transport system ATP-binding protein
+  5mSIPHEX1_0-scaffold_1104_c1_2 K02000  427.10  106.2   4.2e-31 glycine betaine/proline transport system ATP-binding protein [EC:7.6.2.9]
+  5mSIPHEX1_0-scaffold_1104_c1_2 K16013  496.73  105.9   3.7e-31 ATP-binding cassette, subfamily C, bacterial CydD
+  5mSIPHEX1_0-scaffold_1104_c1_2 K17324  363.90  105.8   3.5e-31 glycerol transport system ATP-binding protein
+  5mSIPHEX1_0-scaffold_1104_c1_2 K10823  490.93  105.5   4.9e-31 oligopeptide transport system ATP-binding protein
+  5mSIPHEX1_0-scaffold_1104_c1_2 K18232  464.57  104.5   1.2e-30 oleandomycin transport system ATP-binding protein
+  5mSIPHEX1_0-scaffold_1104_c1_2 K24949  356.47  103.9   1.3e-30 antimicrobial peptide resistance transport system ATP-binding protein [EC:7.6.2.-]
+  5mSIPHEX1_0-scaffold_1104_c1_2 K11603  357.87  103.8   1.3e-30 manganese transport system ATP-binding protein [EC:7.2.2.5]
+  5mSIPHEX1_0-scaffold_1104_c1_2 K16921  289.63  103.7   1.6e-30 acetoin utilization transport system ATP-binding protein
+  5mSIPHEX1_0-scaffold_1104_c1_2 K05641 3076.47  103.6   7.7e-31 ATP-binding cassette, subfamily A (ABC1), member 1
+  5mSIPHEX1_0-scaffold_1104_c1_2 K10021  443.33  102.9   2.3e-30 octopine/nopaline transport system ATP-binding protein [EC:7.4.2.1]
+  5mSIPHEX1_0-scaffold_1104_c1_2 K05658  913.93  102.6   1.8e-30 ATP-binding cassette, subfamily B (MDR/TAP), member 1 [EC:7.6.2.2]
+  5mSIPHEX1_0-scaffold_1104_c1_2 K11635  403.73  101.9   5.3e-30 putative ABC transport system ATP-binding protein
+  5mSIPHEX1_0-scaffold_1104_c1_2 K11710  354.87  101.2   9.3e-30 manganese/zinc/iron transport system ATP- binding protein [EC:7.2.2.5]
+  5mSIPHEX1_0-scaffold_1104_c1_2 K23058  445.83  100.7   1.1e-29 putative lysine/arginine/ornithine/histidine/octopine transport system ATP-binding protein [EC:7.4.2.1]
+  5mSIPHEX1_0-scaffold_1104_c1_2 K05651 2641.13  100.4   7.5e-30 ATP-binding cassette, subfamily A (ABC1), member 9
+  5mSIPHEX1_0-scaffold_1104_c1_2 K10829  357.83  100.2   1.7e-29 ferric hydroxamate transport system ATP-binding protein [EC:7.2.2.16]
+  5mSIPHEX1_0-scaffold_1104_c1_2 K11084  446.90  100.0     2e-29 2-aminoethylphosphonate transport system ATP-binding protein
+  5mSIPHEX1_0-scaffold_1104_c1_2 K13896  802.10   99.5     3e-29 microcin C transport system ATP-binding protein
+  5mSIPHEX1_0-scaffold_1104_c1_2 K16920  346.40   99.3   3.4e-29 acetoin utilization transport system ATP-binding protein
+  5mSIPHEX1_0-scaffold_1104_c1_2 K05643 1740.07   99.2   2.2e-29 ATP-binding cassette, subfamily A (ABC1), member 3
+  5mSIPHEX1_0-scaffold_1104_c1_2 K05776  280.73   98.5   6.7e-29 molybdate transport system ATP-binding protein
+  5mSIPHEX1_0-scaffold_1104_c1_2 K15579  420.20   98.4   6.4e-29 nitrate/nitrite transport system ATP-binding protein
+  5mSIPHEX1_0-scaffold_1104_c1_2 K13926  862.37   98.4   3.8e-29 ribosome-dependent ATPase
+  5mSIPHEX1_0-scaffold_1104_c1_2 K06159  563.70   98.1   6.9e-29 multidrug/microcin transport system ATP-binding/permease protein
+  5mSIPHEX1_0-scaffold_1104_c1_2 K05665 1714.17   97.6     8e-29 ATP-binding cassette, subfamily C (CFTR/MRP), member 1 [EC:7.6.2.3]
+  5mSIPHEX1_0-scaffold_1104_c1_2 K25158  297.43   96.3   2.6e-28 ABC-2 type transport system ATP-binding protein
+  5mSIPHEX1_0-scaffold_1104_c1_2 K25290  401.93   96.1   3.3e-28 ferric hydroxamate/heme transport system ATP-binding protein [EC:7.2.2.16]
+  5mSIPHEX1_0-scaffold_1104_c1_2 K05647 3282.80   95.8     1e-28 ATP binding cassette, subfamily A (ABC1), member 13
+  5mSIPHEX1_0-scaffold_1104_c1_2 K12372  446.30   95.5   5.8e-28 dipeptide transport system ATP-binding protein
+  5mSIPHEX1_0-scaffold_1104_c1_2 K24989  504.60   93.8   1.3e-27 putative thiamine transport system ATP-binding protein
+  5mSIPHEX1_0-scaffold_1104_c1_2 K09691  395.90   93.5   2.8e-27 lipopolysaccharide transport system ATP-binding protein
+  5mSIPHEX1_0-scaffold_1104_c1_2 K19083  366.33   93.4   2.1e-27 bacitracin transport system ATP-binding protein
+  5mSIPHEX1_0-scaffold_1104_c1_2 K11085  680.97   93.2   1.3e-27 ATP-binding cassette, subfamily B, bacterial MsbA [EC:7.5.2.6]
+  5mSIPHEX1_0-scaffold_1104_c1_2 K25285  297.53   93.2     3e-27 iron-siderophore transport system ATP-binding protein [EC:7.2.2.-]
+  5mSIPHEX1_0-scaffold_1104_c1_2 K19973  342.77   93.0   2.9e-27 manganese transport system ATP-binding protein [EC:7.2.2.5]
+  5mSIPHEX1_0-scaffold_1104_c1_2 K16012  447.07   92.9     3e-27 ATP-binding cassette, subfamily C, bacterial CydC
+  5mSIPHEX1_0-scaffold_1104_c1_2 K11004  921.20   92.9   2.3e-27 ATP-binding cassette, subfamily B, bacterial HlyB/CyaB
+  5mSIPHEX1_0-scaffold_1104_c1_2 K18890  694.93   92.1   4.5e-27 ATP-binding cassette, subfamily B, multidrug efflux pump
+  5mSIPHEX1_0-scaffold_1104_c1_2 K05781  288.70   92.0   6.7e-27 putative phosphonate transport system ATP-binding protein
+  5mSIPHEX1_0-scaffold_1104_c1_2 K19079  454.67   91.9   6.2e-27 cationic antimicrobial peptide transport system ATP-binding protein
+  5mSIPHEX1_0-scaffold_1104_c1_2 K11631  387.50   91.7   7.3e-27 bacitracin transport system ATP-binding protein
+  5mSIPHEX1_0-scaffold_1104_c1_2 K24708  767.03   91.6   6.6e-27 ATP-binding cassette, subfamily B, putative efflux pump [EC:7.6.2.-]
+  5mSIPHEX1_0-scaffold_1104_c1_2 K19230  336.57   91.3   9.5e-27 cationic peptide transport system ATP-binding protein
+  5mSIPHEX1_0-scaffold_1104_c1_2 K14699  595.87   91.0   1.4e-26 ATP-binding cassette, subfamily B, bacterial IrtB/YbtQ [EC:7.-.-.-]
+  5mSIPHEX1_0-scaffold_1104_c1_2 K06160  589.57   90.7   1.3e-26 putative pyoverdin transport system ATP-binding/permease protein
+  5mSIPHEX1_0-scaffold_1104_c1_2 K07225  141.63   90.6   1.4e-26 putative hemin transport protein
+  5mSIPHEX1_0-scaffold_1104_c1_2 K15738  638.37   90.2   1.8e-26 ABC transport system ATP-binding/permease protein
+  5mSIPHEX1_0-scaffold_1104_c1_2 K12536  500.50   89.8   2.5e-26 ATP-binding cassette, subfamily C, type I secretion system permease/ATPase
+  5mSIPHEX1_0-scaffold_1104_c1_2 K23188  464.53   89.4   3.8e-26 iron-siderophore transport system ATP-binding protein [EC:7.2.2.17 7.2.2.-]
+  5mSIPHEX1_0-scaffold_1104_c1_2 K05653  790.93   89.3   2.8e-26 ATP-binding cassette, subfamily B (MDR/TAP), member 2 [EC:7.4.2.14]
+  5mSIPHEX1_0-scaffold_1104_c1_2 K10025  428.77   89.3   3.6e-26 arginine/ornithine transport system ATP-binding protein [EC:7.4.2.1]
+  5mSIPHEX1_0-scaffold_1104_c1_2 K25156  291.63   89.3   4.5e-26 viologen exporter family transport system ATP-binding protein
+  5mSIPHEX1_0-scaffold_1104_c1_2 K02021  487.40   87.3   1.1e-25 putative ABC transport system ATP-binding protein
+  5mSIPHEX1_0-scaffold_1104_c1_2 K18889  672.13   87.2   1.4e-25 ATP-binding cassette, subfamily B, multidrug efflux pump
+  5mSIPHEX1_0-scaffold_1104_c1_2 K14698  631.77   86.0   3.4e-25 ATP-binding cassette, subfamily B, bacterial IrtA/YbtP [EC:7.-.-.-]
+  5mSIPHEX1_0-scaffold_1104_c1_2 K06074  246.70   86.0   4.5e-25 vitamin B12 transport system ATP-binding protein [EC:7.6.2.8]
+  5mSIPHEX1_0-scaffold_1104_c1_2 K05780  232.30   85.9   3.9e-25 alpha-D-ribose 1-methylphosphonate 5-triphosphate synthase subunit PhnL [EC:2.7.8.37]
+  5mSIPHEX1_0-scaffold_1104_c1_2 K11953  509.13   85.5   5.9e-25 bicarbonate transport system ATP-binding protein [EC:7.3.2.-]
+  5mSIPHEX1_0-scaffold_1104_c1_2 K24819  773.73   84.5     1e-24 ATP-binding cassette, subfamily B, beta-glucan exporter [EC:7.5.2.3]
+  5mSIPHEX1_0-scaffold_1104_c1_2 K15587  323.03   84.3   1.5e-24 nickel transport system ATP-binding protein [EC:7.2.2.11]
+  5mSIPHEX1_0-scaffold_1104_c1_2 K21397  336.50   84.0   1.3e-24 ABC transport system ATP-binding/permease protein
+  5mSIPHEX1_0-scaffold_1104_c1_2 K24846  530.77   83.8   1.2e-24 ATP-binding cassette, subfamily B, bacterial PglK [EC:7.5.2.-]
+  5mSIPHEX1_0-scaffold_1104_c1_2 K19349  649.47   83.1   2.4e-24 pleuromutilin/lincosamide/streptogramin A transport system ATP-binding/permease protein
+  5mSIPHEX1_0-scaffold_1104_c1_2 K05669 2328.23   83.1   1.5e-24 ATP-binding cassette, subfamily C (CFTR/MRP), member 6
+  5mSIPHEX1_0-scaffold_1104_c1_2 K05657  701.43   83.0   2.5e-24 ATP-binding cassette, subfamily B (MDR/TAP), member 10
+  5mSIPHEX1_0-scaffold_1104_c1_2 K12530  967.07   82.9   2.9e-24 ATP-binding cassette, subfamily B, bacterial RtxB
+  5mSIPHEX1_0-scaffold_1104_c1_2 K05033 2450.73   82.6   1.8e-24 ATP-binding cassette subfamily C (CFTR/MRP) member 9
+  5mSIPHEX1_0-scaffold_1104_c1_2 K05779  226.40   82.5   4.3e-24 putative thiamine transport system ATP-binding protein
+  5mSIPHEX1_0-scaffold_1104_c1_2 K05654  871.17   82.3   3.7e-24 ATP-binding cassette, subfamily B (MDR/TAP), member 3 [EC:7.4.2.14]
+  5mSIPHEX1_0-scaffold_1104_c1_2 K10195  567.83   82.1   5.8e-24 oligogalacturonide transport system ATP-binding protein
+  5mSIPHEX1_0-scaffold_1104_c1_2 K25130  416.30   81.8   6.9e-24 iron-siderophore transport system ATP-binding protein [EC:7.2.2.-]
+  5mSIPHEX1_0-scaffold_1104_c1_2 K15583  531.10   81.7   7.7e-24 oligopeptide transport system ATP-binding protein
+  5mSIPHEX1_0-scaffold_1104_c1_2 K19229  469.20   81.1   1.2e-23 cationic peptide transport system ATP-binding protein
+  5mSIPHEX1_0-scaffold_1104_c1_2 K18894 1842.33   80.9   6.7e-24 ATP-binding cassette, subfamily B, multidrug efflux pump
+  5mSIPHEX1_0-scaffold_1104_c1_2 K13409  696.10   80.3   1.3e-23 ATP-binding cassette, subfamily B, bacterial CvaB/MchF/RaxB
+  5mSIPHEX1_0-scaffold_1104_c1_2 K24911  481.80   79.9   2.5e-23 ATP-binding cassette, subfamily B, bacterial RamB/AmfA
+  5mSIPHEX1_0-scaffold_1104_c1_2 K02036  281.63   79.6   4.1e-23 phosphate transport system ATP-binding protein [EC:7.3.2.1]
+  5mSIPHEX1_0-scaffold_1104_c1_2 K18893  773.83   78.0   8.8e-23 ATP-binding cassette, subfamily B, multidrug efflux pump
+  5mSIPHEX1_0-scaffold_1104_c1_2 K15558       -   77.1   2.5e-22 phthalate transport system ATP-binding protein
+  5mSIPHEX1_0-scaffold_1104_c1_2 K05644 3351.57   76.2   1.2e-22 ATP-binding cassette, subfamily A (ABC1), member 4
+  5mSIPHEX1_0-scaffold_1104_c1_2 K19762       -   76.0   3.1e-22 ATP-binding cassette, subfamily B, HAIF transporter
+  5mSIPHEX1_0-scaffold_1104_c1_2 K05645 3365.97   75.5   2.8e-22 ATP-binding cassette, subfamily A (ABC1), member 7
+  5mSIPHEX1_0-scaffold_1104_c1_2 K17907  588.43   74.8   6.9e-22 autophagy-related protein 9
+  5mSIPHEX1_0-scaffold_1104_c1_2 K18104  654.20   74.6   8.2e-22 ATP-binding cassette, subfamily B, bacterial AbcA/BmrA [EC:7.6.2.2]
+  5mSIPHEX1_0-scaffold_1104_c1_2 K24821  847.77   74.5   9.4e-22 ATP-binding cassette, subfamily B, heavy metal transporter
+  5mSIPHEX1_0-scaffold_1104_c1_2 K25107  239.07   74.0   2.5e-21 nickel transport system ATP-binding protein [EC:7.2.2.11]
+  5mSIPHEX1_0-scaffold_1104_c1_2 K20386       -   73.4   1.7e-21 ATP-binding cassette, subfamily B, bacterial CylB
+  5mSIPHEX1_0-scaffold_1104_c1_2 K05664 2038.20   73.2   1.4e-21 ATP-binding cassette, subfamily B (MDR/TAP), member 11
+  5mSIPHEX1_0-scaffold_1104_c1_2 K05662  968.03   72.9   2.3e-21 ATP-binding cassette, subfamily B (MDR/TAP), member 7
+  5mSIPHEX1_0-scaffold_1104_c1_2 K05656  851.57   71.9   5.1e-21 ATP-binding cassette, subfamily B (MDR/TAP), member 9
+  5mSIPHEX1_0-scaffold_1104_c1_2 K18217  822.27   71.5     8e-21 ATP-binding cassette, subfamily B, tetracycline resistant protein
+  5mSIPHEX1_0-scaffold_1104_c1_2 K05671 2061.27   71.3     5e-21 ATP-binding cassette, subfamily C (CFTR/MRP), member 11
+  5mSIPHEX1_0-scaffold_1104_c1_2 K24820 1090.73   71.2   9.3e-21 ATP-binding cassette, subfamily B, fatty acid transporter
+  5mSIPHEX1_0-scaffold_1104_c1_2 K05032 2691.83   68.9   3.1e-20 ATP-binding cassette subfamily C (CFTR/MRP) member 8
+  5mSIPHEX1_0-scaffold_1104_c1_2 K16907  346.13   67.9   1.6e-19 fluoroquinolone transport system ATP-binding protein [EC:7.6.2.-]
+  5mSIPHEX1_0-scaffold_1104_c1_2 K05659 2207.27   66.4   1.6e-19 ATP-binding cassette, subfamily B (MDR/TAP), member 4 [EC:7.6.2.2]
+  5mSIPHEX1_0-scaffold_1104_c1_2 K09013  155.23   64.7   1.1e-18 Fe-S cluster assembly ATP-binding protein
+  5mSIPHEX1_0-scaffold_1104_c1_2 K24910  466.93   64.5   1.1e-18 ATP-binding cassette, subfamily B, bacterial RamA/AmfB
+  5mSIPHEX1_0-scaffold_1104_c1_2 K06174  231.67   64.5   1.1e-18 ATP-binding cassette, sub-family E, member 1
+  5mSIPHEX1_0-scaffold_1104_c1_2 K12531 1017.13   64.3     1e-18 ATP-binding cassette, subfamily B, bacterial RtxE
+  5mSIPHEX1_0-scaffold_1104_c1_2 K18888  697.33   63.5   1.9e-18 ATP-binding cassette, subfamily B, multidrug efflux pump
+  5mSIPHEX1_0-scaffold_1104_c1_2 K12371  472.33   62.3   6.8e-18 dipeptide transport system ATP-binding protein
+  5mSIPHEX1_0-scaffold_1104_c1_2 K18230  468.27   60.9   1.7e-17 macrolide transport system ATP-binding/permease protein
+  5mSIPHEX1_0-scaffold_1104_c1_2 K05646 3903.53   60.0   6.7e-18 ATP-binding cassette, subfamily A (ABC1), member 12
+  5mSIPHEX1_0-scaffold_1104_c1_2 K05674 1505.73   59.8   1.6e-17 ATP-binding cassette, subfamily C (CFTR/MRP), member 10
+  5mSIPHEX1_0-scaffold_1104_c1_2 K06020  676.83   59.5   4.4e-17 energy-dependent translational throttle protein EttA
+  5mSIPHEX1_0-scaffold_1104_c1_2 K06161 1022.07   59.1   4.8e-17 putative syringomycin transport system ATP-binding/permease protein
+  5mSIPHEX1_0-scaffold_1104_c1_2 K05655  705.37   58.5   5.4e-17 ATP-binding cassette, subfamily B (MDR/TAP), member 8
+  5mSIPHEX1_0-scaffold_1104_c1_2 K03701  384.07   57.8   8.7e-17 excinuclease ABC subunit A
+  5mSIPHEX1_0-scaffold_1104_c1_2 K18887  696.20   57.6   1.2e-16 ATP-binding cassette, subfamily B, multidrug efflux pump
+  5mSIPHEX1_0-scaffold_1104_c1_2 K05679  714.93   57.0   1.7e-16 ATP-binding cassette, subfamily G (WHITE), member 1
+  5mSIPHEX1_0-scaffold_1104_c1_2 K05681  647.60   56.5     2e-16 ATP-binding cassette, subfamily G (WHITE), member 2
+  5mSIPHEX1_0-scaffold_1104_c1_2 K05684  504.10   56.1   3.6e-16 ATP-binding cassette, subfamily G (WHITE), member 8 (sterolin 2)
+  5mSIPHEX1_0-scaffold_1104_c1_2 K18891  793.50   56.0   3.7e-16 ATP-binding cassette, subfamily B, multidrug efflux pump
+  5mSIPHEX1_0-scaffold_1104_c1_2 K05649 2788.10   56.0   2.2e-16 ATP-binding cassette, subfamily A (ABC1), member 6
+  5mSIPHEX1_0-scaffold_1104_c1_2 K18892  749.80   55.7   4.4e-16 ATP-binding cassette, subfamily B, multidrug efflux pump
+  5mSIPHEX1_0-scaffold_1104_c1_2 K25167  361.83   55.1   7.3e-16 ATP-binding cassette, subfamily H
+  5mSIPHEX1_0-scaffold_1104_c1_2 K25106  228.63   54.4     2e-15 nickel transport system ATP-binding protein [EC:7.2.2.11]
+  5mSIPHEX1_0-scaffold_1104_c1_2 K05680 1066.67   53.4   1.7e-15 ATP-binding cassette, subfamily G (WHITE), member 4
+  5mSIPHEX1_0-scaffold_1104_c1_2 K09819  384.20   52.3   5.6e-15 manganese/iron transport system permease protein
+  5mSIPHEX1_0-scaffold_1104_c1_2 K05660 2113.93   52.1   3.1e-15 ATP-binding cassette, subfamily B (MDR/TAP), member 5
+  5mSIPHEX1_0-scaffold_1104_c1_2 K05642 1657.33   51.7   2.8e-15 ATP-binding cassette, subfamily A (ABC1), member 2
+  5mSIPHEX1_0-scaffold_1104_c1_2 K06184  732.90   51.4   9.6e-15 ATP-binding cassette, subfamily F, member 1
+  5mSIPHEX1_0-scaffold_1104_c1_2 K05661  882.93   51.3   8.7e-15 ATP-binding cassette, subfamily B (MDR/TAP), member 6
+  5mSIPHEX1_0-scaffold_1104_c1_2 K02018  242.90   51.1   1.4e-14 molybdate transport system permease protein
+  5mSIPHEX1_0-scaffold_1104_c1_2 K05650 3001.43   51.0   6.5e-15 ATP-binding cassette, subfamily A (ABC1), member 8
+  5mSIPHEX1_0-scaffold_1104_c1_2 K08712 1914.37   50.5   9.9e-15 ATP-binding cassette, subfamily G (WHITE), member 2, SNQ2
+  5mSIPHEX1_0-scaffold_1104_c1_2 K16202  585.47   49.9   3.5e-14 dipeptide transport system ATP-binding protein
+  5mSIPHEX1_0-scaffold_1104_c1_2 K05683  567.40   49.8   2.9e-14 ATP-binding cassette, subfamily G (WHITE), member 5 (sterolin 1)
+  5mSIPHEX1_0-scaffold_1104_c1_2 K05652 3086.73   48.4   3.9e-14 ATP-binding cassette, subfamily A (ABC1), member 10
+  5mSIPHEX1_0-scaffold_1104_c1_2 K03235  542.67   47.6     1e-13 elongation factor 3
+  5mSIPHEX1_0-scaffold_1104_c1_2 K02069  132.67   47.1   1.8e-13 UDP-glucose/iron transport system permease protein
+  5mSIPHEX1_0-scaffold_1104_c1_2 K18216  819.80   46.9   2.2e-13 ATP-binding cassette, subfamily B, tetracycline resistant protein
+  5mSIPHEX1_0-scaffold_1104_c1_2 K09693  378.37   45.8   7.7e-13 teichoic acid transport system ATP-binding protein [EC:7.5.2.4]
+  5mSIPHEX1_0-scaffold_1104_c1_2 K09689  234.77   44.9   1.5e-12 capsular polysaccharide transport system ATP-binding protein [EC:7.6.2.12]
+  5mSIPHEX1_0-scaffold_1104_c1_2 K16917  239.53   44.7     2e-12 putative peptide transport system ATP-binding protein
+  5mSIPHEX1_0-scaffold_1104_c1_2 K06185  752.47   44.1   1.6e-12 ATP-binding cassette, subfamily F, member 2
+  5mSIPHEX1_0-scaffold_1104_c1_2 K19350  352.63   43.6   3.2e-12 lincosamide and streptogramin A transport system ATP-binding/permease protein
+  5mSIPHEX1_0-scaffold_1104_c1_2 K05673 1506.57   43.6   1.3e-12 ATP-binding cassette, subfamily C (CFTR/MRP), member 4
+  5mSIPHEX1_0-scaffold_1104_c1_2 K05031 1233.07   43.3   1.5e-12 cystic fibrosis transmembrane conductance regulator [EC:5.6.1.6]
+  5mSIPHEX1_0-scaffold_1104_c1_2 K07218  178.20   43.0   2.9e-12 nitrous oxidase accessory protein
+  5mSIPHEX1_0-scaffold_1104_c1_2 K05682 1222.73   41.4   8.9e-12 ATP-binding cassette, subfamily G (WHITE), member 3
+  5mSIPHEX1_0-scaffold_1104_c1_2 K22923  253.47   37.9   2.3e-10 Vi polysaccharide transport system ATP-binding protein [EC:7.6.2.12]
+  5mSIPHEX1_0-scaffold_1104_c1_2 K24986  281.37   37.6     2e-10 putative riboflavin transport system permease protein
+  5mSIPHEX1_0-scaffold_1104_c1_2 K05672 1847.90   36.8   1.5e-10 ATP-binding cassette, subfamily C (CFTR/MRP), member 12
+  5mSIPHEX1_0-scaffold_1104_c1_2 K12608  148.30   36.1   7.5e-10 CCR4-NOT complex subunit CAF16
+  5mSIPHEX1_0-scaffold_1104_c1_2 K05668 1931.70   35.2   4.2e-10 ATP-binding cassette, subfamily C (CFTR/MRP), member 5
+  5mSIPHEX1_0-scaffold_1104_c1_2 K18231  463.20   35.2   8.4e-10 macrolide transport system ATP-binding/permease protein
+  5mSIPHEX1_0-scaffold_1104_c1_2 K17074  483.70   34.6   1.4e-09 putative lysine transport system permease protein
+  5mSIPHEX1_0-scaffold_1104_c1_2 K02001  251.47   34.3   1.7e-09 glycine betaine/proline transport system permease protein
+  5mSIPHEX1_0-scaffold_1104_c1_2 K21396  631.67   34.2   1.2e-09 ATP-binding cassette, subfamily G (WHITE), eye pigment precursor transporter
+  5mSIPHEX1_0-scaffold_1104_c1_2 K05670 1813.60   34.1   8.5e-10 ATP-binding cassette, subfamily C (CFTR/MRP), member 13
+  5mSIPHEX1_0-scaffold_1104_c1_2 K09530  546.40   34.1   1.3e-09 DnaJ homolog subfamily C member 10 [EC:1.8.4.-]
+  5mSIPHEX1_0-scaffold_1104_c1_2 K02471  391.47   33.5   2.4e-09 vitamin B12/bleomycin/antimicrobial peptide transport system ATP-binding/permease protein
+  5mSIPHEX1_0-scaffold_1104_c1_2 K05678  510.07   30.6   1.7e-08 ATP-binding cassette, subfamily D (ALD), member 4 [EC:7.6.2.8]
+  5mSIPHEX1_0-scaffold_1104_c1_2 K23329  908.63   30.6   1.5e-08 ATP-binding cassette, subfamily B, vacuolar membrane transporter HMT1/ACLQ
+  5mSIPHEX1_0-scaffold_1104_c1_2 K07128  128.67   29.1   6.6e-08 uncharacterized protein
+  5mSIPHEX1_0-scaffold_1104_c1_2 K25149  185.03   28.7   7.3e-08 polyether ionophore transport system permease protein
+  5mSIPHEX1_0-scaffold_1104_c1_2 K23535  225.10   28.1   1.1e-07 general nucleoside transport system permease protein
+  5mSIPHEX1_0-scaffold_1104_c1_2 K01912  267.57   27.6   1.9e-07 phenylacetate-CoA ligase [EC:6.2.1.30]
+  5mSIPHEX1_0-scaffold_1104_c1_2 K02034  171.43   26.9   3.1e-07 peptide/nickel transport system permease protein
+  5mSIPHEX1_0-scaffold_1104_c1_2 K05666 1813.13   26.4   8.9e-08 ATP-binding cassette, subfamily C (CFTR/MRP), member 2
+  5mSIPHEX1_0-scaffold_1104_c1_2 K11367 2099.37   24.2   6.4e-07 chromodomain-helicase-DNA-binding protein 1 [EC:5.6.2.-]
+  5mSIPHEX1_0-scaffold_1104_c1_2 K03529  559.90   19.8     2e-05 chromosome segregation protein
+  5mSIPHEX1_0-scaffold_1104_c1_2 K07459  131.07   19.2   6.3e-05 putative ATP-dependent endonuclease of the OLD family
+  5mSIPHEX1_0-scaffold_1104_c1_2 K07102  158.03   17.3   0.00034 N-acetylmuramate 1-kinase [EC:2.7.1.221]
+  5mSIPHEX1_0-scaffold_1104_c1_2 K02072  197.87   17.0   0.00033 D-methionine transport system permease protein
+  5mSIPHEX1_0-scaffold_1104_c1_2 K05667 2408.67   16.7   0.00015 ATP-binding cassette, subfamily C (CFTR/MRP), member 3
+  5mSIPHEX1_0-scaffold_1104_c1_2 K03629  109.77   16.2   0.00054 DNA replication and repair protein RecF
+  5mSIPHEX1_0-scaffold_1104_c1_2 K08711 1850.77   15.5   0.00031 ATP-binding cassette, subfamily G (WHITE), member 2, PDR
+  5mSIPHEX1_0-scaffold_1104_c1_2 K06926  104.43   14.4    0.0023 uncharacterized protein
+  5mSIPHEX1_0-scaffold_1104_c1_2 K03546  171.03   12.5    0.0056 DNA repair protein SbcC/Rad50
+  5mSIPHEX1_0-scaffold_1104_c1_2 K23148  177.80   12.4     0.019 cytidine diphosphoramidate kinase [EC:2.7.1.224]
+  5mSIPHEX1_0-scaffold_1104_c1_2 K05675 1361.23   12.3    0.0049 ATP-binding cassette, subfamily D (ALD), member 1 [EC:7.6.2.4]
+  5mSIPHEX1_0-scaffold_1104_c1_2 K03466   60.80   12.2    0.0068 DNA segregation ATPase FtsK/SpoIIIE, S-DNA-T family
+  5mSIPHEX1_0-scaffold_1104_c1_2 K19171  206.23   11.5     0.011 DNA sulfur modification protein DndD
+  5mSIPHEX1_0-scaffold_1104_c1_2 K15628  845.60   10.5      0.02 ATP-binding cassette, subfamily D (ALD), peroxisomal long-chain fatty acid import protein [EC:7.6.2.4]
+  5mSIPHEX1_0-scaffold_1104_c1_2 K25819  699.87   10.0     0.015 ATP-binding cassette, subfamily D (ALD), peroxisomal ABC transporter [EC:7.6.2.4]
+  5mSIPHEX1_0-scaffold_1104_c1_2 K05676 1218.27    9.6     0.039 ATP-binding cassette, subfamily D (ALD), member 2 [EC:7.6.2.4]
+  5mSIPHEX1_0-scaffold_1104_c1_2 K05677  807.80    6.5      0.34 ATP-binding cassette, subfamily D (ALD), member 3 [EC:7.6.2.4]
+  5mSIPHEX1_0-scaffold_1104_c1_3 K10440  332.23  239.0   1.5e-71 ribose transport system permease protein
+  5mSIPHEX1_0-scaffold_1104_c1_3 K02057  275.70  235.3     2e-70 simple sugar transport system permease protein
+  5mSIPHEX1_0-scaffold_1104_c1_3 K10560  327.43  227.8   2.4e-68 rhamnose transport system permease protein
+  5mSIPHEX1_0-scaffold_1104_c1_3 K17206  415.80  206.7   6.6e-62 putative xylitol transport system permease protein
+  5mSIPHEX1_0-scaffold_1104_c1_3 K17214  406.80  194.5   3.8e-58 inositol transport system permease protein
+  5mSIPHEX1_0-scaffold_1104_c1_3 K10561  329.10  194.5   4.4e-58 rhamnose transport system permease protein
+  5mSIPHEX1_0-scaffold_1104_c1_3 K10553  383.50  193.6   7.4e-58 fructose transport system permease protein
+  5mSIPHEX1_0-scaffold_1104_c1_3 K23546  357.40  192.0   2.2e-57 sugar transport system permease protein
+  5mSIPHEX1_0-scaffold_1104_c1_3 K10538  339.87  191.4   3.3e-57 L-arabinose transport system permease protein
+  5mSIPHEX1_0-scaffold_1104_c1_3 K23509  331.50  184.5   4.7e-55 galactofuranose transport system permease protein
+  5mSIPHEX1_0-scaffold_1104_c1_3 K10556  350.13  176.2   1.3e-52 AI-2 transport system permease protein
+  5mSIPHEX1_0-scaffold_1104_c1_3 K17203  430.03  165.1   3.1e-49 erythritol transport system permease protein
+  5mSIPHEX1_0-scaffold_1104_c1_3 K10557  319.13  157.9   5.4e-47 AI-2 transport system permease protein
+  5mSIPHEX1_0-scaffold_1104_c1_3 K17209  463.23  156.4   1.6e-46 inositol transport system permease protein
+  5mSIPHEX1_0-scaffold_1104_c1_3 K10541  346.87  153.3   1.6e-45 methyl-galactoside transport system permease protein
+  5mSIPHEX1_0-scaffold_1104_c1_3 K10544  413.00  132.1   4.1e-39 D-xylose transport system permease protein
+  5mSIPHEX1_0-scaffold_1104_c1_3 K10550  450.73  128.1   6.6e-38 D-allose transport system permease protein
+  5mSIPHEX1_0-scaffold_1104_c1_3 K10547  456.23  121.1   7.9e-36 putative multiple sugar transport system permease protein
+  5mSIPHEX1_0-scaffold_1104_c1_3 K01998  236.40   71.3     9e-21 branched-chain amino acid transport system permease protein
+  5mSIPHEX1_0-scaffold_1104_c1_3 K01997  167.60   57.4     2e-16 branched-chain amino acid transport system permease protein
+  5mSIPHEX1_0-scaffold_1104_c1_3 K11961  291.63   37.1   2.5e-10 urea transport system permease protein
+  5mSIPHEX1_0-scaffold_1104_c1_3 K23536  188.90   29.0   6.1e-08 general nucleoside transport system permease protein
+  5mSIPHEX1_0-scaffold_1104_c1_3 K23535  225.10   28.8   6.5e-08 general nucleoside transport system permease protein
+  5mSIPHEX1_0-scaffold_1104_c1_3 K23512  245.43   25.1   1.5e-06 riboflavin transport system permease protein
+  5mSIPHEX1_0-scaffold_1104_c1_3 K01995  307.80   22.4   7.4e-06 branched-chain amino acid transport system ATP-binding protein
+  5mSIPHEX1_0-scaffold_1104_c1_3 K10441  704.27   20.4   2.6e-05 ribose transport system ATP-binding protein [EC:7.5.2.7]
+  5mSIPHEX1_0-scaffold_1104_c1_3 K11956  394.80   19.8   7.7e-05 neutral amino acid transport system permease protein
+  5mSIPHEX1_0-scaffold_1104_c1_3 K05832  221.77   19.3   3.9e-05 putative tryptophan/tyrosine transport system permease protein
+  5mSIPHEX1_0-scaffold_1104_c1_3 K23511  309.20   17.1   0.00033 riboflavin transport system permease protein
+  5mSIPHEX1_0-scaffold_1104_c1_3 K25361  250.10    7.2      0.29 transmembrane 6 superfamily
+  5mSIPHEX1_0-scaffold_1104_c1_3 K17356  124.13    5.4       1.6 tetraspanin-13/31
+  5mSIPHEX1_0-scaffold_1104_c1_3 K11960  261.20    5.4       1.3 urea transport system permease protein
+  5mSIPHEX1_0-scaffold_1104_c1_4 K02057  275.70  272.6   9.4e-82 simple sugar transport system permease protein
+  5mSIPHEX1_0-scaffold_1104_c1_4 K10440  332.23  240.6   4.9e-72 ribose transport system permease protein
+  5mSIPHEX1_0-scaffold_1104_c1_4 K10561  329.10  233.5   7.3e-70 rhamnose transport system permease protein
+  5mSIPHEX1_0-scaffold_1104_c1_4 K17206  415.80  215.5   1.5e-64 putative xylitol transport system permease protein
+  5mSIPHEX1_0-scaffold_1104_c1_4 K10557  319.13  204.6   3.2e-61 AI-2 transport system permease protein
+  5mSIPHEX1_0-scaffold_1104_c1_4 K17214  406.80  188.0   3.6e-56 inositol transport system permease protein
