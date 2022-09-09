@@ -12,7 +12,7 @@ Idlist<- function(file){
   #recortamos por el  " #"
   Id <-strsplit(ID_lines, " #")
   #de cada seleccion elegir la linea [1]
-  ID <-sapply(Id, `[`, 1)
+  ID <-sapply(Id, `[`, 1,simplify = FALSE)
   #el valor numerico de cada linea 
   #grep_index <-grep(">",file)
   #ID<-Id[1][1]
