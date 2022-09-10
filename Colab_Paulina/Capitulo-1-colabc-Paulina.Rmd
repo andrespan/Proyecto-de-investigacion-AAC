@@ -77,7 +77,7 @@ ls uncultured_Leeuwenhoekiella_ERR59* | while read line; do specie=$(echo "$line
 
 #Run evomining with
 ```{bash}
-docker run --rm -i -t -v $(pwd):/var/www/html/EvoMining/exchange -p 8000 nselem/evomining:latest /bin/bash
+docker run --rm -i -t -v $(pwd):/var/www/html/EvoMining/exchange -p 8000:80 nselem/evomining:latest /bin/bash
 ```
 
 ```{docker}
@@ -99,7 +99,7 @@ enter to docker
  docker run --rm -i -t -v $(pwd):/var/www/html/EvoMining/exchange -p 8000:80 nselem/evomining:latest /bin/bash
 
 and run evomining:
-startEvoMining.pl -g GENOMES -r ActinosOriginal
+startEvoMining.pl -g GENOMES -c ActinosOriginal -r Corason_Rast.IDs
 
 and see results with the docker open:
 
