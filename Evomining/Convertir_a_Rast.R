@@ -70,6 +70,7 @@ ldply(.data = listof_ids,
       .fun= function(x) archivo_txt(Secuencias_file,x))
 
 
+
 #-------------------------------------------------------------------------------
 #Y un archivo fasta con identificadores de RAST
 #Queremos aplicar la funcion para una lista de todos los ids

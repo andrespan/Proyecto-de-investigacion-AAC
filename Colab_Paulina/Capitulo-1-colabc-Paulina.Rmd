@@ -1,6 +1,8 @@
 ---
 title: "Colaboración con Paulina"
-output: html_notebook
+output:
+  html_document:
+    df_print: paged
 ---
 
 ## Download Genomes of Leuwenhoekellia
