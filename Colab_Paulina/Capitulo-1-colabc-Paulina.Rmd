@@ -89,10 +89,12 @@ docker run --rm -i -t -v $(pwd):/var/www/html/EvoMining/exchange -p 8000:80 nsel
 and open in browser
 
 http://132.248.196.38:8000/EvoMining/html/index.html
+# http://132.248.196.38:80X/EvoMining/html/index.html
 
-Download IDs for all Actinos :
 
-http://132.248.196.38:80X/EvoMining/html/index.html
+Download DB for all Actinos Enzime Families :
+https://zenodo.org/record/1219709#.XBpzdMaVvCI
+
 
 
 Then run Evomining with Actinos IDs:
@@ -110,17 +112,4 @@ and see results with the docker open:
 now we se the heatplot
 # The EF with more than 1 copies:
 
-Glycolysis_3--Phosphofructokinase_7
-Glycolysis_6--glyceraldehyde3phosphate_dehydrogenase_4
-Glycolysis_9--enolase_4
-TCA_2--Aconitate_hydratase_3
-TCA_11--fumarate_reductase_ironsulfur_subunit_5
-
-3PGA_AMINOACIDS_1--Phosphoglycerate_dehydrogenase_4
-3PGA_AMINOACIDS_6--Cysteine_synthase_6
-
-ALPHAKETOGLUTARATE_AMINOACIDS_2--glutamate dehydrogenase_1
-ALPHAKETOGLUTARATE_AMINOACIDS_6--Pyrroline-5-carboxylate_reductase_1
-ALPHAKETOGLUTARATE_AMINOACIDS_9--Acetylornithine_aminotransferase_1
-E4P_AMINO_ACIDS_8--Anthranilate_synthase_component_1_3
-E4P_AMINO_ACIDS_16--Aspartate_amino_transferase_1
+Excel Colaboracion Paulina
