@@ -12,7 +12,7 @@ Secuencias_file <- readLines('Datos/5mSIPHEX1_0_short.faa')
 #class(Identificadores)
 #Identificadores
 #--------------------------------------------------------------------------------
-#Con estafuncion Obtenemos una lista con todos los IDs del archivo
+#Con esta funcion Obtenemos una lista con todos los IDs del archivo
 Idlist<- function(file){
   #identificamos todas las lineas que contienen ">" 
   grep_index <-grep(">",file)
