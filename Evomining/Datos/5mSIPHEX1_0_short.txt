@@ -339,7 +339,7 @@
   5mSIPHEX1_0-scaffold_1104_c1_3 K11956  394.80   19.8   7.7e-05 neutral amino acid transport system permease protein
   5mSIPHEX1_0-scaffold_1104_c1_3 K05832  221.77   19.3   3.9e-05 putative tryptophan/tyrosine transport system permease protein
   5mSIPHEX1_0-scaffold_1104_c1_3 K23511  309.20   17.1   0.00033 riboflavin transport system permease protein
-  5mSIPHEX1_0-scaffold_1104_c1_3 K25361  250.10    7.2      0.29 transmembrane 6 superfamily
+* 5mSIPHEX1_0-scaffold_1104_c1_3 K25361  250.10    7.2      0.29 transmembrane 6 superfamily
   5mSIPHEX1_0-scaffold_1104_c1_3 K17356  124.13    5.4       1.6 tetraspanin-13/31
   5mSIPHEX1_0-scaffold_1104_c1_3 K11960  261.20    5.4       1.3 urea transport system permease protein
   5mSIPHEX1_0-scaffold_1104_c1_4 K02057  275.70  272.6   9.4e-82 simple sugar transport system permease protein
