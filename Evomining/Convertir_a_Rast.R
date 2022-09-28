@@ -72,7 +72,4 @@ ldply(.data = listof_ids,
 
 
 #-------------------------------------------------------------------------------
-#Y un archivo fasta con identificadores de RAST
-#Queremos aplicar la funcion para una lista de todos los ids
-#library(purrr)
-#map_dfr(Identificadores,archivo_txt(Secuencias_file,x))
+#Agregamos la columna function al df entre la columna 3 y 4
