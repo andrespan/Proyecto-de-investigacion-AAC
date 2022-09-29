@@ -40,6 +40,8 @@ archivo_txt <- function(file,id){
   #Encontrar solo el ID
   Id <-strsplit(grep_line, " #")
   ID<-Id[[1]][1]
+  #cambiar el - por _
+  id_completo<-gsub("-", "_", ID)
   #encontrar el index de identificador2
   grep_index <-grep(id,Secuencias_file)
   #obtener secuencia de aminoacidos
@@ -55,7 +57,7 @@ archivo_txt <- function(file,id){
   df <- data.frame(matrix(ncol = 4, nrow = 0))
   colnames(df) <-c("ID", "coordenada1", "coordenada2", "aminoacid_sec")
   #rellenar las filas de el df
-  df[1,] <-c(ID, coordenada1,coordenada2,aminoacid_sec)
+  df[1,] <-c(id_completo, coordenada1,coordenada2,aminoacid_sec)
   return (df)
 }
 #-------------------------------------------------------------------------------
@@ -66,47 +68,65 @@ archivo_txt(Secuencias_file,identificador2)
 #con ldply corremos la funcion para una lista que contiene todos los Id
 #obtieniendo un una tabla con el ID, las cordenadas ,la anotacion y la secuencia
 library(plyr)
-ldply(.data = listof_ids,
-      .fun= function(x) archivo_txt(Secuencias_file,x))
+df_1235<-ldply(.data = listof_ids,
+               .fun= function(x) archivo_txt(Secuencias_file,x))
 
+df_1235
 #-------------------------------------------------------------------------------
-#Agregamos la columna function al df entre la columna 3 y 4
+#Agregamos la columna Funcion al dataframe que resulta de archivo_txt entre la columna 3 y 4
+
 #incluimos la funcion ID_to_metabolic
 
+#con la funcion read_ko buscar en la tabla la columna 3 (el numero de KO)
+#library(devtools)
+#install_github("mirnavazquez/RbiMs")
 library("rbims")
-#dataframe K0 es e output de la funcion read_ko de rbims
+#dataframe proviene del output de la funcion read_ko 
 k0<-read_ko("Datos/5mSIPHEX1_0_short.txt")
 k0
+#class(k0)
+
 #variable id de prueba
 id_prueba <- "5mSIPHEX1_0_scaffold_1104_c1_2"
+id_prueba
 
 #prueba grep
 #grep("5mSIPHEX1_0_scaffold_1104_c1_2", My.Data$Scaffold_name)
 grep_id <-k0[grep("5mSIPHEX1_0_scaffold_1104_c1_2", k0$Scaffold_name), ]
 grep_id
 
-#subset(My.Data, startsWith(as.character(Scaffold_name), "5mSIPHEX1_0_scaffold_1104_c1_2"))
-#library(dplyr)
-#library(stringr)
-#My.Data %>% filter(str_detect(Scaffold_name, '5mSIPHEX1_0_scaffold_1104_c1_2'))
-
 #funcion atomo 
 # doy un ID y regresar una function metabolica
 #5mSIPHEX1_0-scaffold_1104_c1_2 K02056
 ID_to_metabolic <-function(id,df){
   grep_id <-df[grep(id, df$Scaffold_name), ]
+  #regresar un dataframe que contenga ID y metabolic
   metabolic<-grep_id[3]
-  return(metabolic)
+  #agregar un > al id
+  id_completo <- paste(">",id,sep = "")
+  dataframe <- data.frame(id_completo,metabolic)
+  return(dataframe)
 }
 
 ID_to_metabolic(id_prueba,k0)
 
 #ahora lo voy a aplicar a una lista de IDs 
-Lista_IDs <- k0[,1]
-column1
+Lista_IDs <- k0$Scaffold_name
+#Lista_IDs
+
 #aplicamos funcion para todos los ids
 library(plyr)
-ldply(.data =column1,
-      .fun= function(x) ID_to_metabolic(x,k0))
+ko_df<- ldply(.data =Lista_IDs,
+              .fun= function(x) ID_to_metabolic(x,k0))
 
+ko_df
+#Unir el df de la funcion ID_to_metabolic y archivo_txt con merge
 
+df = merge(x = df_1235 , y = ko_df, by = 1, all.x = TRUE)
+df
+#cambiar la columna 5 a la 4 con select()
+#library(dplyr)
+select(df,ID, coordenada1, coordenada2,KO,aminoacid_sec)
+
+#Para crear el archivo de rast
+#write.csv(df, file = "archivorast", row.names = FALSE)

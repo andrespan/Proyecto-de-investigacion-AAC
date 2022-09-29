@@ -16,28 +16,27 @@ id_prueba
 grep_id <-k0[grep("5mSIPHEX1_0_scaffold_1104_c1_2", k0$Scaffold_name), ]
 grep_id
 
-#subset(My.Data, startsWith(as.character(Scaffold_name), "5mSIPHEX1_0_scaffold_1104_c1_2"))
-#library(dplyr)
-#library(stringr)
-#My.Data %>% filter(str_detect(Scaffold_name, '5mSIPHEX1_0_scaffold_1104_c1_2'))
-
 #funcion atomo 
 # doy un ID y regresar una function metabolica
 #5mSIPHEX1_0-scaffold_1104_c1_2 K02056
 ID_to_metabolic <-function(id,df){
   grep_id <-df[grep(id, df$Scaffold_name), ]
+  #regresar un dataframe que contenga ID y metabolic
   metabolic<-grep_id[3]
-  return(metabolic)
+  #agregar un > al id
+  id_completo <- paste(">",id,sep = "")
+  dataframe <- data.frame(id_completo,metabolic)
+  return(dataframe)
 }
 
 ID_to_metabolic(id_prueba,k0)
 
 #ahora lo voy a aplicar a una lista de IDs 
 Lista_IDs <- k0$Scaffold_name
-Lista_IDs
+#Lista_IDs
+
 #aplicamos funcion para todos los ids
 library(plyr)
 ldply(.data =Lista_IDs,
       .fun= function(x) ID_to_metabolic(x,k0))
 
-#
