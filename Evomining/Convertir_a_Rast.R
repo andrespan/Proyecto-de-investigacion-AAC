@@ -46,6 +46,7 @@ archivo_txt <- function(file,id){
   grep_index <-grep(id,Secuencias_file)
   #obtener secuencia de aminoacidos
   aminoacid_sec <- Secuencias_file[grep_index+1]
+  aminoacid<-gsub('[*]', '',aminoacid_sec)
   #cordenada1
   element <-strsplit(grep_line, "#")
   element[[1]][2]
@@ -57,7 +58,7 @@ archivo_txt <- function(file,id){
   df <- data.frame(matrix(ncol = 4, nrow = 0))
   colnames(df) <-c("ID", "coordenada1", "coordenada2", "aminoacid_sec")
   #rellenar las filas de el df
-  df[1,] <-c(id_completo, coordenada1,coordenada2,aminoacid_sec)
+  df[1,] <-c(id_completo, coordenada1,coordenada2,aminoacid)
   return (df)
 }
 #-------------------------------------------------------------------------------
@@ -126,7 +127,22 @@ df = merge(x = df_1235 , y = ko_df, by = 1, all.x = TRUE)
 df
 #cambiar la columna 5 a la 4 con select()
 library(dplyr)
-select(df,ID, coordenada1, coordenada2,KO,aminoacid_sec)
+dat_2 <- select(df,ID, coordenada1, coordenada2,KO,aminoacid_sec)
+dat_2
 
+#-------------------------------------------------------------------------------
+#creamos un archivo fasta que tenga el id y las secuencia de aminoacidos
+#creamos una variable de tipo caracter
+
+Xfasta <- character(nrow(dat_2) * 2)
+Xfasta[c(TRUE, FALSE)] <- dat_2$ID
+Xfasta[c(FALSE, TRUE)] <- dat_2$aminoacid_sec
+Xfasta
+#cramos el archivo 
+writeLines(Xfasta, "aminoacid_file.fasta")
 #Para crear el archivo de rast
 #write.csv(df, file = "archivorast", row.names = FALSE)
+#install.packages("phylotools")
+#library(phylotools)
+#dat2fasta(dat_2, outfile = "out.fasta")
+#
