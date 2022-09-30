@@ -125,7 +125,7 @@ ko_df
 df = merge(x = df_1235 , y = ko_df, by = 1, all.x = TRUE)
 df
 #cambiar la columna 5 a la 4 con select()
-#library(dplyr)
+library(dplyr)
 select(df,ID, coordenada1, coordenada2,KO,aminoacid_sec)
 
 #Para crear el archivo de rast
