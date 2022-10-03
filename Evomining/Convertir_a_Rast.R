@@ -130,6 +130,7 @@ library(dplyr)
 dat_2 <- select(df,ID, coordenada1, coordenada2,KO,aminoacid_sec)
 dat_2
 
+
 #-------------------------------------------------------------------------------
 #creamos un archivo fasta que tenga el id y las secuencia de aminoacidos
 #creamos una variable de tipo caracter
@@ -141,8 +142,14 @@ Xfasta
 #cramos el archivo 
 writeLines(Xfasta, "aminoacid_file.fasta")
 #Para crear el archivo de rast
-#write.csv(df, file = "archivorast", row.names = FALSE)
-#install.packages("phylotools")
-#library(phylotools)
-#dat2fasta(dat_2, outfile = "out.fasta")
-#
+
+write.table(dat_2, "rast_file.txt", append = TRUE, sep = " ", dec = ".",
+            row.names = FALSE, col.names = TRUE)
+#write.csv(dat_2, file="file.csv")
+#Xrast <- character(nrow(dat_2) * 2)
+#Xrast[c(TRUE, FALSE)] <- dat_2
+#Xrast
+#write.table(Xrast, "rast_file.fasta")
+
+
+          
