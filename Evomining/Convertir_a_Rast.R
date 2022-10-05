@@ -4,7 +4,7 @@ identificador2 <- ">5mSIPHEX1_0-scaffold_1104_c1_2"
 #identificador2
 #--------------------------------------------------------------------------------
 #cargamos el archivo de las secuencias
-Secuencias_file <- readLines('Datos/5mSIPHEX1_0_short.faa')
+Secuencias_file <- readLines('Datos/5mSIPHEX1_0.faa')
 #class(Secuencias_file)
 #-------------------------------------------------
 #una lista de 2 identificadores
@@ -141,9 +141,11 @@ Xfasta[c(FALSE, TRUE)] <- dat_2$aminoacid_sec
 Xfasta
 #cramos el archivo 
 writeLines(Xfasta, "aminoacid_file.fasta")
+
+#--------------------------------------------------------------------------------
 #Para crear el archivo de rast
 
-write.table(dat_2, "rast_file.txt", append = TRUE, sep = " ", dec = ".",
+write.table(dat_2, "rast_file.tsv", append = TRUE, sep = '\t', dec = ".",
             row.names = FALSE, col.names = TRUE)
 #write.csv(dat_2, file="file.csv")
 #Xrast <- character(nrow(dat_2) * 2)
