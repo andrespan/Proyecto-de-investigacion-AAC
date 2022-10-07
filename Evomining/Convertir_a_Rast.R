@@ -83,9 +83,9 @@ df_1235
 #install_github("mirnavazquez/RbiMs")
 library("rbims")
 #dataframe proviene del output de la funcion read_ko 
-k0<-read_ko("Datos/5mSIPHEX1_0_short.txt")
+k0<-read_ko("Datos/02.KO_results/5mSIPHEX1_0.faa.txt")
 k0
-#class(k0)
+class(k0)
 
 #variable id de prueba
 id_prueba <- "5mSIPHEX1_0_scaffold_1104_c1_2"
@@ -138,14 +138,14 @@ dat_2
 Xfasta <- character(nrow(dat_2) * 2)
 Xfasta[c(TRUE, FALSE)] <- dat_2$ID
 Xfasta[c(FALSE, TRUE)] <- dat_2$aminoacid_sec
-Xfasta
+head(Xfasta)
 #cramos el archivo 
-writeLines(Xfasta, "aminoacid_file.fasta")
-
+file_fasta <- writeLines(Xfasta, "Archivos_convertidos/aminoacid_file.fasta")
+file_fasta
 #--------------------------------------------------------------------------------
 #Para crear el archivo de rast
 
-write.table(dat_2, "rast_file.tsv", append = TRUE, sep = '\t', dec = ".",
+write.table(dat_2, "Archivos_convertidos/rast_file.tsv", append = TRUE, sep = '\t', dec = ".",
             row.names = FALSE, col.names = TRUE)
 #write.csv(dat_2, file="file.csv")
 #Xrast <- character(nrow(dat_2) * 2)
@@ -153,5 +153,31 @@ write.table(dat_2, "rast_file.tsv", append = TRUE, sep = '\t', dec = ".",
 #Xrast
 #write.table(Xrast, "rast_file.fasta")
 
+#-------------------------------------------------------------------------------
 
-          
+
+#Hacer una funcion que convierta el identificador de la secuencia del
+#archivo fasta en la columna 2 del tsv de rast
+library("readr")
+Rast_tsv <- read_tsv("Ejemplos/BINSIP5_0_rast_file.tsv")
+Xfasta2 <- character(nrow(dat_2) * 2)
+Xfasta2[c(TRUE, FALSE)] <- paste(">", Rast_tsv$feature_id, sep = "")
+Xfasta2[c(FALSE, TRUE)] <- dat_2$aminoacid_sec
+head(Xfasta2)
+
+feat_id_faa <- writeLines(Xfasta2, "Archivos_convertidos/featureid_file.faa")
+feat_id_faa
+#-------------------------------------------------------------------------------
+#Calcular columna "strand" restando las columnas de coordenadas stop-start y 
+#arrojar una columna con + o -  si el resultado es positivo o negativo
+
+resta_dir <- Rast_tsv$stop - Rast_tsv$start
+head(resta_dir)    
+class(resta_dir)
+resta_dir
+
+Rast_tsv$strand <- as.character(ifelse(resta_dir < 0, "-", "+"))
+write.table(Rast_tsv, "Archivos_convertidos/rast_wstrand.tsv", append = TRUE, sep = '\t', dec = ".",
+            row.names = FALSE, col.names = TRUE)
+
+
