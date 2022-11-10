@@ -74,7 +74,7 @@ df_1235
 #incluimos la funcion ID_to_metabolic
 
 #con la funcion read_ko buscar en la tabla la columna 3 (el numero de KO)
-install.packages("devtools")
+#install.packages("devtools")
 library(devtools)
 install_github("mirnavazquez/RbiMs")
 library("rbims")
