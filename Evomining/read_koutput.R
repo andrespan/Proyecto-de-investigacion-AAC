@@ -1,5 +1,5 @@
 #con la funcion read_ko buscar en la tabla la columna 3 (el numero de KO)
-#library(devtools)
+library(devtools)
 #install_github("mirnavazquez/RbiMs")
 library("rbims")
 #dataframe proviene del output de la funcion read_ko 

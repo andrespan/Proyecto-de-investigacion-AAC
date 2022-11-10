@@ -6,11 +6,6 @@ identificador2 <- ">5mSIPHEX1_0-scaffold_1104_c1_2"
 #cargamos el archivo de las secuencias
 Secuencias_file <- readLines('Datos/5mSIPHEX1_0.faa')
 #class(Secuencias_file)
-#-------------------------------------------------
-#una lista de 2 identificadores
-#Identificadores <- list(">5mSIPHEX1_0-scaffold_1104_c1_1",">5mSIPHEX1_0-scaffold_1104_c1_2")
-#class(Identificadores)
-#Identificadores
 #--------------------------------------------------------------------------------
 #Con esta funcion Obtenemos una lista con todos los IDs del archivo
 Idlist<- function(file){
@@ -55,10 +50,10 @@ archivo_txt <- function(file,id){
   element[[1]][3]
   coordenada2 <- as.integer( element[[1]][3])
   #Hacer un dataframe vacio
-  df <- data.frame(matrix(ncol = 4, nrow = 0))
-  colnames(df) <-c("ID", "coordenada1", "coordenada2", "aminoacid_sec")
+  df <- data.frame(matrix(ncol = 14, nrow = 0))
+  colnames(df) <-c("contig_id",	"feature_id",	"type",	"location", "start",	"stop", "strand","function",	"locus_tag",	"figfam",	"species",	"nucleotide_sequence",	"amino_acid",	"sequence_accession")
   #rellenar las filas de el df
-  df[1,] <-c(id_completo, coordenada1,coordenada2,aminoacid)
+  df[1,] <-c("contig_id",	"feature_id",	"type",	"location", coordenada1, coordenada2, "strand","function",	"unknown",	"figfam",	"species",	"nuc",	aminoacid, id_completo)
   return (df)
 }
 #-------------------------------------------------------------------------------
@@ -79,8 +74,9 @@ df_1235
 #incluimos la funcion ID_to_metabolic
 
 #con la funcion read_ko buscar en la tabla la columna 3 (el numero de KO)
-#library(devtools)
-#install_github("mirnavazquez/RbiMs")
+install.packages("devtools")
+library(devtools)
+install_github("mirnavazquez/RbiMs")
 library("rbims")
 #dataframe proviene del output de la funcion read_ko 
 k0<-read_ko("Datos/02.KO_results/5mSIPHEX1_0.faa.txt")
