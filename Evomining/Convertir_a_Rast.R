@@ -21,13 +21,25 @@ Idlist<- function(file){
   #grep_index <-grep(">",file)
   return (ID)
 }
+
 #Corremos la funcion con el archivo
 listof_ids<- Idlist(Secuencias_file)
 listof_ids
+
+#-------------------------------------------------------------------------------
+#con la funcion read_ko buscar en la tabla la columna 3 (el numero de KO)
+#install.packages("devtools")
+#library(devtools)
+#install_github("mirnavazquez/RbiMs")
+library("rbims")
+#dataframe proviene del output de la funcion read_ko 
+k0<-read_ko("Datos/02.KO_results/5mSIPHEX1_0.faa.txt")
+k0
+(k0)
 #-------------------------------------------------------------------------------
 # Esta funcion tiene un archivo y te regresa un dataframe con ID, coordendas 1 y 2 y aminoacidos en orden
 #function
-archivo_txt <- function(file,id){ 
+archivo_txt <- function(file,df,id){ 
   #Encontrar la linea completa  del identificador2 
   #Ejemplo: ">5mSIPHEX1_0-scaffold_1104_c1_2 # 235 # 1749 # 1 # ID=11_2;
   #partial=00;start_type=ATG;rbs_motif=AGGAG;rbs_spacer=5-10bp;gc_cont=0.637"
@@ -37,6 +49,8 @@ archivo_txt <- function(file,id){
   ID<-Id[[1]][1]
   #cambiar el - por _
   id_completo<-gsub("-", "_", ID)
+  #quitar el > al id_completo
+  id_mod<-gsub('>', '',id_completo)
   #encontrar el index de identificador2
   grep_index <-grep(id,Secuencias_file)
   #obtener secuencia de aminoacidos
@@ -49,23 +63,34 @@ archivo_txt <- function(file,id){
   #cordenada2
   element[[1]][3]
   coordenada2 <- as.integer( element[[1]][3])
+  #Calcular columna "strand" restando las columnas de coordenadas stop-start y 
+  #arrojar una columna con + o -  si el resultado es positivo o negativo
+  resta_dir <- coordenada2 - coordenada1
+  strand <- as.character(ifelse(resta_dir < 0, "-", "+"))
+  #agregar funcion a partir del df k0
+  grep_id <-df[grep(id_mod, df$Scaffold_name), ]
+  #regresar la fila 3 que es annotation = metabolic
+  metabolic<-grep_id[3]
   #Hacer un dataframe vacio
   df <- data.frame(matrix(ncol = 14, nrow = 0))
   colnames(df) <-c("contig_id",	"feature_id",	"type",	"location", "start",	"stop", "strand","function",	"locus_tag",	"figfam",	"species",	"nucleotide_sequence",	"amino_acid",	"sequence_accession")
   #rellenar las filas de el df
-  df[1,] <-c("contig_id",	"feature_id",	"type",	"location", coordenada1, coordenada2, "strand","function",	"unknown",	"figfam",	"species",	"nuc",	aminoacid, id_completo)
+  df[1,] <-c("contig_id",	"feature_id",	"type",	"location", coordenada1, coordenada2, strand, metabolic,	"unknown",	"figfam",	"species",	"nuc",	aminoacid, id_completo)
   return (df)
 }
 #-------------------------------------------------------------------------------
 #probamos la funcion para Identificador2 
-archivo_txt(Secuencias_file,identificador2)
-
+archivo_txt(Secuencias_file,k0,identificador2)
+#-------------------------------------------------------------------------------
+#lista de 2 ids
+lista_prueba <- c(">5mSIPHEX1_0-scaffold_1104_c1_2", ">5mSIPHEX1_0-scaffold_23_c1_3")
+class(lista_prueba)
 #-------------------------------------------------------------------------------
 #con ldply corremos la funcion para una lista que contiene todos los Id
 #obtieniendo un una tabla con el ID, las cordenadas ,la anotacion y la secuencia
 library(plyr)
 df_1235<-ldply(.data = listof_ids,
-               .fun= function(x) archivo_txt(Secuencias_file,x))
+               .fun= function(x) archivo_txt(Secuencias_file,k0,x))
 
 df_1235
 #-------------------------------------------------------------------------------
@@ -119,7 +144,7 @@ ko_df<- ldply(.data =Lista_IDs,
 ko_df
 #Unir el df de la funcion ID_to_metabolic y archivo_txt con merge
 
-df = merge(x = df_1235 , y = ko_df, by = 1, all.x = TRUE)
+df = merge(x = df_1235 , y = ko_df, by.y = 1, by.x=14, all.x = TRUE)
 df
 #cambiar la columna 5 a la 4 con select()
 library(dplyr)
