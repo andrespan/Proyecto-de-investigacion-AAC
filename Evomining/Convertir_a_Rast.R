@@ -26,16 +26,6 @@ Idlist<- function(file){
 listof_ids<- Idlist(Secuencias_file)
 listof_ids
 
-
-#-------------------------------------------------------------------------------
-#con la funcion read_ko buscar en la tabla la columna 3 (el numero de KO)
-#install.packages("devtools")
-#library(devtools)
-#install_github("mirnavazquez/RbiMs")
-library("rbims")
-#dataframe proviene del output de la funcion read_ko 
-k0<-read_ko("Datos/02.KO_results/5mSIPHEX1_0.faa.txt")
-k0
 #-------------------------------------------------------------------------------
 # Esta funcion tiene un archivo y te regresa un dataframe con ID, coordendas 1 y 2 y aminoacidos en orden
 #function
@@ -71,11 +61,14 @@ archivo_txt <- function(file,id){
   #grep_id <-df[grepl(id_mod, df$Scaffold_name)|is.na(df$Scaffold_name), ]
   #regresar la fila 3 que es annotation = metabolic
   #metabolic<-grep_id[3]
+  #agregar a contig_id el id_completo hasta el numero despues de "scaffold"
+  contig <-strsplit(id_mod, "_")
+  contig_id<-contig[[1]][4]
   #Hacer un dataframe vacio
   df <- data.frame(matrix(ncol = 13, nrow = 0))
   colnames(df) <-c("contig_id",	"feature_id",	"type",	"location", "start",	"stop", "strand",	"locus_tag",	"figfam",	"species",	"nucleotide_sequence",	"amino_acid",	"sequence_accession")
   #rellenar las filas de el df
-  df[1,] <-c("contig_id",	"feature_id",	"type",	"location", coordenada1, coordenada2, strand,	"unknown",	"figfam",	"species",	"nuc",	aminoacid, id_completo)
+  df[1,] <-c(contig_id,	"feature_id",	"type",	"location", coordenada1, coordenada2, strand,	"unknown",	"figfam",	"species",	"nuc",	aminoacid, id_mod)
   return (df)
 }
 #-------------------------------------------------------------------------------
@@ -83,8 +76,8 @@ archivo_txt <- function(file,id){
 archivo_txt(Secuencias_file,identificador2)
 #-------------------------------------------------------------------------------
 #lista de 2 ids
-lista_prueba <- c(">5mSIPHEX1_0-scaffold_1104_c1_2", ">5mSIPHEX1_0-scaffold_23_c1_3")
-class(lista_prueba)
+#lista_prueba <- c(">5mSIPHEX1_0-scaffold_1104_c1_2", ">5mSIPHEX1_0-scaffold_23_c1_3")
+#class(lista_prueba)
 #-------------------------------------------------------------------------------
 #con ldply corremos la funcion para una lista que contiene todos los Id
 #obtieniendo un una tabla con el ID, las cordenadas ,la anotacion y la secuencia
@@ -102,10 +95,11 @@ df_1235
 #install.packages("devtools")
 #library(devtools)
 #install_github("mirnavazquez/RbiMs")
-#library("rbims")
+library("rbims")
 #dataframe proviene del output de la funcion read_ko 
 k0<-read_ko("Datos/02.KO_results/5mSIPHEX1_0.faa.txt")
-colnames(k0)
+
+#colnames(k0)
 #class(k0)
 
 #variable id de prueba
@@ -114,8 +108,8 @@ id_prueba
 
 #prueba grep
 #grep("5mSIPHEX1_0_scaffold_1104_c1_2", My.Data$Scaffold_name)
-grep_id <-k0[grep("5mSIPHEX1_0_scaffold_1104_c1_2", k0$Scaffold_name), ]
-grep_id
+#grep_id <-k0[grep("5mSIPHEX1_0_scaffold_1104_c1_2", k0$Scaffold_name), ]
+#grep_id
 
 #funcion atomo 
 # doy un ID y regresar una function metabolica
@@ -125,8 +119,8 @@ ID_to_metabolic <-function(id,df){
   #regresar un dataframe que contenga ID y metabolic
   metabolic<-grep_id[3]
   #agregar un > al id
-  id_completo <- paste(">",id,sep = "")
-  dataframe <- data.frame(id_completo,metabolic)
+  #id_completo <- paste(">",id,sep = "")
+  dataframe <- data.frame(id,metabolic)
   return(dataframe)
 }
 
@@ -134,7 +128,7 @@ ID_to_metabolic(id_prueba,k0)
 
 #ahora lo voy a aplicar a una lista de IDs 
 Lista_IDs <- k0$Scaffold_name
-#Lista_IDs
+Lista_IDs
 
 #aplicamos funcion para todos los ids
 library(plyr)
@@ -148,6 +142,8 @@ colnames(ko_df)[2] <- "function"
 
 df = merge(x = df_1235 , y = ko_df, by.y = 1, by.x=13, all.x = TRUE)
 df
+#df$sequence_accession<-gsub('>', '',df$sequence_accession)
+#df
 
 #cambiar la columna 5 a la 4 con select()
 library(dplyr)
@@ -156,13 +152,13 @@ dat_2
 
 
 #-------------------------------------------------------------------------------
-#creamos un archivo fasta que tenga el id y las secuencia de aminoacidos
-#creamos una variable de tipo caracter
+#creamos un archivo fasta que tenga el feature_id y las secuencia de aminoacidos
+#la columna 2 "feature_id" del tsv de rast y amino_acid
 
 Xfasta <- character(nrow(dat_2) * 2)
-Xfasta[c(TRUE, FALSE)] <- dat_2$ID
-Xfasta[c(FALSE, TRUE)] <- dat_2$aminoacid_sec
-head(Xfasta)
+Xfasta[c(TRUE, FALSE)] <- paste(">",dat_2$feature_id,sep = "")
+Xfasta[c(FALSE, TRUE)] <- dat_2$amino_acid
+
 #cramos el archivo 
 file_fasta <- writeLines(Xfasta, "Archivos_convertidos/aminoacid_file.fasta")
 file_fasta
@@ -171,11 +167,9 @@ file_fasta
 
 write.table(dat_2, "Archivos_convertidos/rast_file.tsv", append = TRUE, sep = '\t', dec = ".",
             row.names = FALSE, col.names = TRUE)
-#write.csv(dat_2, file="file.csv")
-#Xrast <- character(nrow(dat_2) * 2)
-#Xrast[c(TRUE, FALSE)] <- dat_2
-#Xrast
-#write.table(Xrast, "rast_file.fasta")
+
+write.table(Rast_tsv, "Archivos_convertidos/rast_wstrand.tsv", append = TRUE, sep = '\t', dec = ".",
+            row.names = FALSE, col.names = TRUE)
 
 #-------------------------------------------------------------------------------
 
@@ -203,5 +197,6 @@ resta_dir
 Rast_tsv$strand <- as.character(ifelse(resta_dir < 0, "-", "+"))
 write.table(Rast_tsv, "Archivos_convertidos/rast_wstrand.tsv", append = TRUE, sep = '\t', dec = ".",
             row.names = FALSE, col.names = TRUE)
+
 
 
