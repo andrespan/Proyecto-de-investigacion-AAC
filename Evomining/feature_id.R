@@ -2,22 +2,30 @@
 
 # los feature_id van a ir 100000 20000000....420000
 library("readr")
-gtdbK_file <- read_table('Datos/gtdbtk.bac120.summary.tsv')
+gtdbK_file <- read_tsv('Datos/gtdbtk.bac120.summary.tsv')
 colnames(gtdbK_file)
 gtdbK_file$classification
 gtdbK_file$user_genome
-
+gtdbK_file$fastani_taxonomy
+gtdbK_file$closest_placement_taxonomy
+gtdbK_file$pplacer_taxonomy
+gtdbK_file$
 
 genome_example<-"700mSIPHEX1-concot_0"
 
 user_id <- function(file,id){ 
+  grep_line <- grep(value = TRUE, id,file)
   #cambiar el - por _
-  id_completo<-gsub("-", "_", id)
+  id_completo<-gsub("-", "_", grep_line)
   #cortar el id
   id_split <-strsplit(id_completo, "_")
   ID<-paste(id_split[[1]][1],"_",id_split[[1]][3],sep = "")
   #Encontrar la asignacion de gtdbk
-  
+  gtdbk_name <- file$classification
+  splitname <- strsplit(gtdbk_name, "__")
+  genera <- splitname[[1]][1]
+  #ifelse( < 0, "-", "+")
+  #separar por __ y quedarnos con genero o specie
   #Ejemplo: ">5mSIPHEX1_0-scaffold_1104_c1_2 # 235 # 1749 # 1 # ID=11_2;
   #partial=00;start_type=ATG;rbs_motif=AGGAG;rbs_spacer=5-10bp;gc_cont=0.637"
   #grep_line <- grep(value = TRUE, id,file)
