@@ -9,22 +9,27 @@ gtdbK_file$user_genome
 gtdbK_file$fastani_taxonomy
 gtdbK_file$closest_placement_taxonomy
 gtdbK_file$pplacer_taxonomy
-gtdbK_file$
+
 
 genome_example<-"700mSIPHEX1-concot_0"
 
 user_id <- function(file,id){ 
-  grep_line <- grep(value = TRUE, id,file)
+  grep_line <- grep(value = TRUE,id,file$user_genome)
   #cambiar el - por _
   id_completo<-gsub("-", "_", grep_line)
   #cortar el id
   id_split <-strsplit(id_completo, "_")
   ID<-paste(id_split[[1]][1],"_",id_split[[1]][3],sep = "")
   #Encontrar la asignacion de gtdbk
-  gtdbk_name <- file$classification
-  splitname <- strsplit(gtdbk_name, "__")
-  genera <- splitname[[1]][1]
+  #grep_index <-grep(id,file)
+  gtdbtk <-file[file$user_genome == grep_line, "classification"]
+  #grep_gtdbtk <-file[grep(id, file$classification), ]
+  separador<- "s__"
+  splitname <- strsplit(as.character(gtdbtk), split = separador)
+  genera <- splitname[[1]][2]
+  genera_s<-gsub(" ", "_", genera)
   #ifelse( < 0, "-", "+")
+  s<- as.character(ifelse(splitname 0, "-", "+"))
   #separar por __ y quedarnos con genero o specie
   #Ejemplo: ">5mSIPHEX1_0-scaffold_1104_c1_2 # 235 # 1749 # 1 # ID=11_2;
   #partial=00;start_type=ATG;rbs_motif=AGGAG;rbs_spacer=5-10bp;gc_cont=0.637"
@@ -59,8 +64,22 @@ user_id <- function(file,id){
   df <- data.frame(matrix(ncol = 4, nrow = 0))
   colnames(df) <-c("id_numero",	"feature_id","user_genome","gtdbk")
   #rellenar las filas de el df
-  df[1,] <-c("id_num", "feature_id",	ID,	"gtdbk_name")
+  df[1,] <-c(100000, 666666.100000,	ID,	genera_s)
   return (df)
 }
 
 user_id(gtdbK_file,genome_example)
+#-----------------------------------------------------------------------------------
+#aplicar par una lista de ids
+#lista:
+userg_list<-gtdbK_file$user_genome
+library(plyr)
+taxon_assig<- ldply(.data =userg_list,
+              .fun= function(x) user_id(gtdbK_file,x))
+
+taxon_assig
+
+#----------------------------------------------------------------------------------
+
+grep_line <- grep(value = TRUE,genome_example,gtdbK_file$user_genome)
+grep_line
