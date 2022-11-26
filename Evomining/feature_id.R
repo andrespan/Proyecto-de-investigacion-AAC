@@ -19,7 +19,7 @@ x
 id_completo<-gsub("-", "_",x$user_genome)
 id_split <-strsplit(id_completo, "_")
 id_split
-bin_id<-paste(id_split[[1]][1],"_",id_split[[1]][3],sep = "")
+ bin_id<-paste(id_split[[1]][1],"_",id_split[[1]][3],sep = "")
 bin_id
 w<-strsplit(x$classification, ";")
 w
