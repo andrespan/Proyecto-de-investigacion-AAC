@@ -6,8 +6,21 @@ identificador2 <- ">5mSIPHEX1_0-scaffold_1104_c1_2"
 #cargamos el archivo de las secuencias
 Secuencias_file <- readLines('Datos/5mSIPHEX1_0.faa')
 #class(Secuencias_file)
+#-------------------------------------------------------------------------------
+#cargamos el archivo de los rastids 
+rast_ids<-read.table("Datos/rast_namesid.IDs",colClasses = "character")
+rast_ids$V3
+#feature_id<-"666666.100326"
+x<-rast_ids[rast_ids$V3 == ig,]
+x
+1:nrow(rast_ids)
+xvalue<-which(x == ig, arr.ind = TRUE)
+xvalue
+sp<-x$V4
+specie<-lapply(sp,`[[`, 1)
+specie
 #--------------------------------------------------------------------------------
-#Con esta funcion Obtenemos una lista con todos los IDs del archivo
+ #Con esta funcion Obtenemos una lista con todos los IDs del archivo
 Idlist<- function(file){
   #identificamos todas las lineas que contienen ">" 
   grep_index <-grep(">",file)
@@ -25,11 +38,12 @@ Idlist<- function(file){
 #Corremos la funcion con el archivo
 listof_ids<- Idlist(Secuencias_file)
 listof_ids
-
+xvalue<-which(listof_ids == identificador2, arr.ind = TRUE)
+xvalue
 #-------------------------------------------------------------------------------
 # Esta funcion tiene un archivo y te regresa un dataframe con ID, coordendas 1 y 2 y aminoacidos en orden
 #function
-archivo_txt <- function(file,id){ 
+archivo_txt <- function(file2,file,id){ 
   #Encontrar la linea completa  del identificador2 
   #Ejemplo: ">5mSIPHEX1_0-scaffold_1104_c1_2 # 235 # 1749 # 1 # ID=11_2;
   #partial=00;start_type=ATG;rbs_motif=AGGAG;rbs_spacer=5-10bp;gc_cont=0.637"
@@ -64,16 +78,27 @@ archivo_txt <- function(file,id){
   #agregar a contig_id el id_completo hasta el numero despues de "scaffold"
   contig <-strsplit(id_mod, "_")
   contig_id<-contig[[1]][4]
+  #hacer feature id
+  identif_g<-strsplit(gsub("-","_",id),"_")
+  ig<-gsub(">","",gsub(" ","_",paste(identif_g[[1]][1],identif_g[[1]][2])))
+  #feature_id<-"666666.100326"
+  x<-rast_ids[file2$V3 == ig,]
+  xvalue<-which(file == grep_line, arr.ind = TRUE)
+  x_row<-xvalue[1]
+  feature<-paste("fig|",x$V2,".peg.",x_row,sep = "")
+  #calcular especie
+  specie<-lapply(x$V4,`[[`, 1)
   #Hacer un dataframe vacio
   df <- data.frame(matrix(ncol = 13, nrow = 0))
   colnames(df) <-c("contig_id",	"feature_id",	"type",	"location", "start",	"stop", "strand",	"locus_tag",	"figfam",	"species",	"nucleotide_sequence",	"amino_acid",	"sequence_accession")
   #rellenar las filas de el df
-  df[1,] <-c(contig_id,	"feature_id",	"type",	"location", coordenada1, coordenada2, strand,	"unknown",	"figfam",	"species",	"nuc",	aminoacid, id_mod)
+  df[1,] <-c(contig_id,	feature,	"type",	"location", coordenada1, coordenada2, strand,	"unknown",	"figfam",	specie,	"nuc",	aminoacid, id_mod)
   return (df)
 }
 #-------------------------------------------------------------------------------
 #probamos la funcion para Identificador2 
-archivo_txt(Secuencias_file,identificador2)
+
+archivo_txt(rast_ids,Secuencias_file,identificador2)
 #-------------------------------------------------------------------------------
 #lista de 2 ids
 #lista_prueba <- c(">5mSIPHEX1_0-scaffold_1104_c1_2", ">5mSIPHEX1_0-scaffold_23_c1_3")
@@ -83,7 +108,8 @@ archivo_txt(Secuencias_file,identificador2)
 #obtieniendo un una tabla con el ID, las cordenadas ,la anotacion y la secuencia
 library(plyr)
 df_1235<-ldply(.data = listof_ids,
-               .fun= function(x) archivo_txt(Secuencias_file,x))
+               .fun= function(x) archivo_txt(rast_ids,Secuencias_file,x))
+
 
 df_1235
 #-------------------------------------------------------------------------------
@@ -92,19 +118,16 @@ df_1235
 #incluimos la funcion ID_to_metabolic
 
 #con la funcion read_ko buscar en la tabla la columna 3 (el numero de KO)
-#install.packages("devtools")
-#library(devtools)
-#install_github("mirnavazquez/RbiMs")
+install.packages("devtools")
+library(devtools)
+install_github("mirnavazquez/RbiMs")
 library("rbims")
 #dataframe proviene del output de la funcion read_ko 
 k0<-read_ko("Datos/02.KO_results/5mSIPHEX1_0.faa.txt")
 
-#colnames(k0)
-#class(k0)
-
 #variable id de prueba
 id_prueba <- "5mSIPHEX1_0_scaffold_1104_c1_2"
-id_prueba
+#id_prueba
 
 #prueba grep
 #grep("5mSIPHEX1_0_scaffold_1104_c1_2", My.Data$Scaffold_name)
@@ -155,48 +178,26 @@ dat_2
 #creamos un archivo fasta que tenga el feature_id y las secuencia de aminoacidos
 #la columna 2 "feature_id" del tsv de rast y amino_acid
 
-Xfasta <- character(nrow(dat_2) * 2)
-Xfasta[c(TRUE, FALSE)] <- paste(">",dat_2$feature_id,sep = "")
-Xfasta[c(FALSE, TRUE)] <- dat_2$amino_acid
+#Xfasta <- character(nrow(dat_2) * 2)
+#Xfasta[c(TRUE, FALSE)] <- paste(">",dat_2$feature_id,sep = "")
+#Xfasta[c(FALSE, TRUE)] <- dat_2$amino_acid
 
 #cramos el archivo 
-file_fasta <- writeLines(Xfasta, "Archivos_convertidos/aminoacid_file.fasta")
-file_fasta
+#file_fasta <- writeLines(Xfasta, "Archivos_convertidos/aminoacid_file.fasta")
+#file_fasta
 #--------------------------------------------------------------------------------
 #Para crear el archivo de rast
+#usar el nombre de numero
+n<-dat_2$species[1]
+name<-rast_ids[rast_ids$V4 == n,]
+id_num<-name$V1
+write.table(dat_2, paste("Archivos_convertidos/",id_num,".tsv"), append = TRUE, sep = '\t', dec = ".",
+            row.names = FALSE, col.names = TRUE, quote=FALSE)
 
-write.table(dat_2, "Archivos_convertidos/rast_file.tsv", append = TRUE, sep = '\t', dec = ".",
-            row.names = FALSE, col.names = TRUE)
 
-write.table(Rast_tsv, "Archivos_convertidos/rast_wstrand.tsv", append = TRUE, sep = '\t', dec = ".",
-            row.names = FALSE, col.names = TRUE)
 
 #-------------------------------------------------------------------------------
 
-
-#Hacer una funcion que convierta el identificador de la secuencia del
-#archivo fasta en la columna 2 del tsv de rast
-library("readr")
-Rast_tsv <- read_tsv("Ejemplos/BINSIP5_0_rast_file.tsv")
-Xfasta2 <- character(nrow(dat_2) * 2)
-Xfasta2[c(TRUE, FALSE)] <- paste(">", Rast_tsv$feature_id, sep = "")
-Xfasta2[c(FALSE, TRUE)] <- dat_2$aminoacid_sec
-head(Xfasta2)
-
-feat_id_faa <- writeLines(Xfasta2, "Archivos_convertidos/featureid_file.faa")
-feat_id_faa
-#-------------------------------------------------------------------------------
-#Calcular columna "strand" restando las columnas de coordenadas stop-start y 
-#arrojar una columna con + o -  si el resultado es positivo o negativo
-
-resta_dir <- Rast_tsv$stop - Rast_tsv$start
-head(resta_dir)    
-class(resta_dir)
-resta_dir
-
-Rast_tsv$strand <- as.character(ifelse(resta_dir < 0, "-", "+"))
-write.table(Rast_tsv, "Archivos_convertidos/rast_wstrand.tsv", append = TRUE, sep = '\t', dec = ".",
-            row.names = FALSE, col.names = TRUE)
 
 
 
