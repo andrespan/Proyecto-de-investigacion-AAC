@@ -47,7 +47,7 @@ xvalue
 #-------------------------------------------------------------------------------
 # Esta funcion tiene un archivo y te regresa un dataframe con ID, coordendas 1 y 2 y aminoacidos en orden
 #function
-archivo_txt <- function(file2,file,id){ 
+archivo_txt <- function(file2,file,list,id){ 
   #Encontrar la linea completa  del identificador2 
   #Ejemplo: ">5mSIPHEX1_0-scaffold_1104_c1_2 # 235 # 1749 # 1 # ID=11_2;
   #partial=00;start_type=ATG;rbs_motif=AGGAG;rbs_spacer=5-10bp;gc_cont=0.637"
@@ -87,7 +87,8 @@ archivo_txt <- function(file2,file,id){
   ig<-gsub(">","",gsub(" ","_",paste(identif_g[[1]][1],identif_g[[1]][2])))
   #feature_id<-"666666.100326"
   x<-rast_ids[file2$V3 == ig,]
-  xvalue<-which(file == grep_line, arr.ind = TRUE)
+  #xvalue<-which(file == grep_line)
+  xvalue<-which(list == id, arr.ind = TRUE)
   x_row<-xvalue[1]
   feature<-paste("fig|",x$V2,".peg.",x_row,sep = "")
   #calcular especie
@@ -102,17 +103,17 @@ archivo_txt <- function(file2,file,id){
 #-------------------------------------------------------------------------------
 #probamos la funcion para Identificador2 
 
-archivo_txt(rast_ids,Secuencias_file,identificador2)
+archivo_txt(rast_ids,Secuencias_file,listof_ids,identificador2)
 #-------------------------------------------------------------------------------
 #lista de 2 ids
-#lista_prueba <- c(">5mSIPHEX1_0-scaffold_1104_c1_2", ">5mSIPHEX1_0-scaffold_23_c1_3")
+lista_prueba <- c(">5mSIPHEX1_0-scaffold_1104_c1_1", ">5mSIPHEX1_0-scaffold_1104_c1_2", ">5mSIPHEX1_0-scaffold_1104_c1_3", ">5mSIPHEX1_0-scaffold_1104_c1_4")
 #class(lista_prueba)
 #-------------------------------------------------------------------------------
 #con ldply corremos la funcion para una lista que contiene todos los Id
 #obtieniendo un una tabla con el ID, las cordenadas ,la anotacion y la secuencia
 library(plyr)
 df_1235<-ldply(.data = listof_ids,
-               .fun= function(x) archivo_txt(rast_ids,Secuencias_file,x))
+               .fun= function(x) archivo_txt(rast_ids,Secuencias_file,listof_ids,x))
 
 
 df_1235
