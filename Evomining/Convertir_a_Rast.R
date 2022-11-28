@@ -2,6 +2,9 @@
 #creamos una variable que tiene un solo un id, el identificador 2
 identificador2 <- ">5mSIPHEX1_0-scaffold_1104_c1_2"
 #identificador2
+n<-df_1235$species[1]
+name<-rast_ids[rast_ids$V4 == n,]
+id_num<-name$V1
 #--------------------------------------------------------------------------------
 #cargamos el archivo de las secuencias
 Secuencias_file <- readLines('Datos/5mSIPHEX1_0.faa')
@@ -36,6 +39,7 @@ Idlist<- function(file){
 }
 
 #Corremos la funcion con el archivo
+
 listof_ids<- Idlist(Secuencias_file)
 listof_ids
 xvalue<-which(listof_ids == identificador2, arr.ind = TRUE)
@@ -43,7 +47,7 @@ xvalue
 #-------------------------------------------------------------------------------
 # Esta funcion tiene un archivo y te regresa un dataframe con ID, coordendas 1 y 2 y aminoacidos en orden
 #function
-archivo_txt <- function(file2,file,id){ 
+archivo_txt <- function(file2,file,list,id){ 
   #Encontrar la linea completa  del identificador2 
   #Ejemplo: ">5mSIPHEX1_0-scaffold_1104_c1_2 # 235 # 1749 # 1 # ID=11_2;
   #partial=00;start_type=ATG;rbs_motif=AGGAG;rbs_spacer=5-10bp;gc_cont=0.637"
@@ -83,7 +87,8 @@ archivo_txt <- function(file2,file,id){
   ig<-gsub(">","",gsub(" ","_",paste(identif_g[[1]][1],identif_g[[1]][2])))
   #feature_id<-"666666.100326"
   x<-rast_ids[file2$V3 == ig,]
-  xvalue<-which(file == grep_line, arr.ind = TRUE)
+  #xvalue<-which(file == grep_line)
+  xvalue<-which(list == id, arr.ind = TRUE)
   x_row<-xvalue[1]
   feature<-paste("fig|",x$V2,".peg.",x_row,sep = "")
   #calcular especie
@@ -98,17 +103,17 @@ archivo_txt <- function(file2,file,id){
 #-------------------------------------------------------------------------------
 #probamos la funcion para Identificador2 
 
-archivo_txt(rast_ids,Secuencias_file,identificador2)
+archivo_txt(rast_ids,Secuencias_file,listof_ids,identificador2)
 #-------------------------------------------------------------------------------
 #lista de 2 ids
-#lista_prueba <- c(">5mSIPHEX1_0-scaffold_1104_c1_2", ">5mSIPHEX1_0-scaffold_23_c1_3")
+lista_prueba <- c(">5mSIPHEX1_0-scaffold_1104_c1_1", ">5mSIPHEX1_0-scaffold_1104_c1_2", ">5mSIPHEX1_0-scaffold_1104_c1_3", ">5mSIPHEX1_0-scaffold_1104_c1_4")
 #class(lista_prueba)
 #-------------------------------------------------------------------------------
 #con ldply corremos la funcion para una lista que contiene todos los Id
 #obtieniendo un una tabla con el ID, las cordenadas ,la anotacion y la secuencia
 library(plyr)
 df_1235<-ldply(.data = listof_ids,
-               .fun= function(x) archivo_txt(rast_ids,Secuencias_file,x))
+               .fun= function(x) archivo_txt(rast_ids,Secuencias_file,listof_ids,x))
 
 
 df_1235
@@ -178,9 +183,11 @@ dat_2
 #creamos un archivo fasta que tenga el feature_id y las secuencia de aminoacidos
 #la columna 2 "feature_id" del tsv de rast y amino_acid
 
-#Xfasta <- character(nrow(dat_2) * 2)
-#Xfasta[c(TRUE, FALSE)] <- paste(">",dat_2$feature_id,sep = "")
-#Xfasta[c(FALSE, TRUE)] <- dat_2$amino_acid
+Xfasta <- character(nrow(dat_2) * 2)
+#>gi|666666.100335.1|666666.100335|BINSIP5_0_Pacificitalea|NA|BINSIP5_0_Pacificitalea
+#LAEGANAKVLYGAGWVGVTKDNMADYDF
+Xfasta[c(TRUE, FALSE)] <- paste(">gi",gsub(".peg","",dat_2$feature_id),"|",dat_2$species,"|NA|",dat_2$species,sep = "")
+Xfasta[c(FALSE, TRUE)] <- dat_2$amino_acid
 
 #cramos el archivo 
 #file_fasta <- writeLines(Xfasta, "Archivos_convertidos/aminoacid_file.fasta")
