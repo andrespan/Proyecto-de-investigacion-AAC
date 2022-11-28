@@ -1,22 +1,26 @@
-install.packages("devtools")
+#install.packages("devtools")
 library(devtools)
 #install_github("mirnavazquez/RbiMs")
 library(plyr)
 library(dplyr)
 library(devtools)
-library("rbims")
+#library("rbims")
 
-L = list.files("/Users/aarredondo/Downloads/03/03.Proteome_named_scaff", ".faa")
-L
-lapply(L, function(x) {
-  #creamos una variable que tiene un solo un id, el identificador 2
-  identificador2 <- ">5mSIPHEX1_0-scaffold_1104_c1_2"
-  #identificador2
+#L = list.files("Datos/03/03.Proteome_named_scaff", ".faa")
+
+#<-read.table("Datos/rast_namesid.IDs",colClasses = "character")
+#lapply(allFiles, 
+Secuencias_file <- 'Datos/5mSIPHEX1_0.faa'
+fil2<- 'Datos/03/03.Proteome_named_scaff/5mSIPHEX1_10.faa'
+fil3<- 'Datos/03/03.Proteome_named_scaff/5mSIPHEX2_18.faa'
+class(fil3)
+
+lafun<-function(file) {
   #--------------------------------------------------------------------------------
   #cargamos el archivo de las secuencias
-  Secuencias_file <- readLines(x)
+  Secuencias_file <- readLines(file)
   #class(Secuencias_file)
-  his.dir <- dirname(this.file)
+  #his.dir <- dirname(this.file)
   #-------------------------------------------------------------------------------
   #cargamos el archivo de los rastids 
   rast_ids<-read.table("Datos/rast_namesid.IDs",colClasses = "character")
@@ -48,9 +52,10 @@ lapply(L, function(x) {
   
   #Corremos la funcion con el archivo
   listof_ids<- Idlist(Secuencias_file)
-  listof_ids
-  xvalue<-which(listof_ids == identificador2, arr.ind = TRUE)
-  xvalue
+  #creamos una variable que tiene un solo un id, el identificador 2
+  #identificador2 <- listof_ids[[1]]
+  #xvalue<-which(listof_ids == identificador2, arr.ind = TRUE)
+  #xvalue
   #-------------------------------------------------------------------------------
   # Esta funcion tiene un archivo y te regresa un dataframe con ID, coordendas 1 y 2 y aminoacidos en orden
   #function
@@ -100,16 +105,17 @@ lapply(L, function(x) {
     #calcular especie
     specie<-lapply(x$V4,`[[`, 1)
     #Hacer un dataframe vacio
-    df <- data.frame(matrix(ncol = 13, nrow = 0))
-    colnames(df) <-c("contig_id",	"feature_id",	"type",	"location", "start",	"stop", "strand",	"locus_tag",	"figfam",	"species",	"nucleotide_sequence",	"amino_acid",	"sequence_accession")
+    df <- data.frame(matrix(ncol = 14, nrow = 0))
+    colnames(df) <-c("contig_id",	"feature_id",	"type",	"location", "start",	"stop", "strand", "function",	"locus_tag",	"figfam",	"species",	"nucleotide_sequence",	"amino_acid",	"sequence_accession")
     #rellenar las filas de el df
-    df[1,] <-c(contig_id,	feature,	"type",	"location", coordenada1, coordenada2, strand,	"unknown",	"figfam",	specie,	"nuc",	aminoacid, id_mod)
+    #df,"contig_id",	"feature_id",	"type",	"location", "start",	"stop", "strand","function",	"locus_tag",	"figfam",	"species",	"nucleotide_sequence",	"amino_acid",	"sequence_accession")
+    df[1,] <-c(contig_id,	feature,	"type",	"location", coordenada1, coordenada2, strand, "function",	"unknown",	"figfam",	specie,	"nuc",	aminoacid, id_mod)
     return (df)
   }
   #-------------------------------------------------------------------------------
   #probamos la funcion para Identificador2 
   
-  archivo_txt(rast_ids,Secuencias_file,identificador2)
+  #archivo_txt(rast_ids,Secuencias_file,identificador2)
   #-------------------------------------------------------------------------------
   #lista de 2 ids
   #lista_prueba <- c(">5mSIPHEX1_0-scaffold_1104_c1_2", ">5mSIPHEX1_0-scaffold_23_c1_3")
@@ -130,14 +136,14 @@ lapply(L, function(x) {
   
   #con la funcion read_ko buscar en la tabla la columna 3 (el numero de KO)
   #install.packages("devtools")
-  library(devtools)
+  #library(devtools)
   #install_github("mirnavazquez/RbiMs")
-  library("rbims")
+  #library("rbims")
   #dataframe proviene del output de la funcion read_ko 
-  k0<-read_ko(paste("Datos/02.KO_results/"5mSIPHEX1_0.faa".txt")
+  #k0<-read_ko(paste("Datos/02.KO_results/","5mSIPHEX1_0.faa",".txt")
   
   #variable id de prueba
-  id_prueba <- "5mSIPHEX1_0_scaffold_1104_c1_2"
+  #id_prueba <- "5mSIPHEX1_0_scaffold_1104_c1_2"
   #id_prueba
   
   #prueba grep
@@ -148,41 +154,41 @@ lapply(L, function(x) {
   #funcion atomo 
   # doy un ID y regresar una function metabolica
   #5mSIPHEX1_0-scaffold_1104_c1_2 K02056
-  ID_to_metabolic <-function(id,df){
-    grep_id <-df[grep(id, df$Scaffold_name), ]
+  #ID_to_metabolic <-function(id,df){
+    #grep_id <-df[grep(id, df$Scaffold_name), ]
     #regresar un dataframe que contenga ID y metabolic
-    metabolic<-grep_id[3]
+    #metabolic<-grep_id[3]
     #agregar un > al id
     #id_completo <- paste(">",id,sep = "")
-    dataframe <- data.frame(id,metabolic)
-    return(dataframe)
-  }
+    #dataframe <- data.frame(id,metabolic)
+    #return(dataframe)
+  #}
   
-  ID_to_metabolic(id_prueba,k0)
+  #ID_to_metabolic(id_prueba,k0)
   
   #ahora lo voy a aplicar a una lista de IDs 
-  Lista_IDs <- k0$Scaffold_name
-  Lista_IDs
+  #Lista_IDs <- k0$Scaffold_name
+  #Lista_IDs
   
   #aplicamos funcion para todos los ids
-  library(plyr)
-  ko_df<- ldply(.data =Lista_IDs,
-                .fun= function(x) ID_to_metabolic(x,k0))
+  #library(plyr)
+  #ko_df<- ldply(.data =Lista_IDs,
+                #.fun= function(x) ID_to_metabolic(x,k0))
   
-  ko_df
-  colnames(ko_df)[2] <- "function"
+  #ko_df
+  #colnames(ko_df)[2] <- "function"
   
   #Unir el df de la funcion ID_to_metabolic y archivo_txt con merge
   
-  df = merge(x = df_1235 , y = ko_df, by.y = 1, by.x=13, all.x = TRUE)
-  df
+  #df = merge(x = df_1235 , y = ko_df, by.y = 1, by.x=13, all.x = TRUE)
+  #df
   #df$sequence_accession<-gsub('>', '',df$sequence_accession)
   #df
   
   #cambiar la columna 5 a la 4 con select()
-  library(dplyr)
-  dat_2 <- select(df,"contig_id",	"feature_id",	"type",	"location", "start",	"stop", "strand","function",	"locus_tag",	"figfam",	"species",	"nucleotide_sequence",	"amino_acid",	"sequence_accession")
-  dat_2
+  #library(dplyr)
+  #dat_2 <- select(df,"contig_id",	"feature_id",	"type",	"location", "start",	"stop", "strand","function",	"locus_tag",	"figfam",	"species",	"nucleotide_sequence",	"amino_acid",	"sequence_accession")
+  #dat_2
   
   
   #-------------------------------------------------------------------------------
@@ -199,18 +205,36 @@ lapply(L, function(x) {
   #--------------------------------------------------------------------------------
   #Para crear el archivo de rast
   #usar el nombre de numero
-  n<-dat_2$species[1]
+  n<-df_1235$species[1]
   name<-rast_ids[rast_ids$V4 == n,]
   id_num<-name$V1
-  write.table(dat_2, paste("Archivos_convertidos/",id_num,".tsv"), append = TRUE, sep = '\t', dec = ".",
+  rastable<-write.table(df_1235, paste("Archivos_convertidos/",id_num,".txt",sep = ""), append = TRUE, sep = '\t', dec = ".",
               row.names = FALSE, col.names = TRUE, quote=FALSE)
+  rastable
+  #------------------------------------------------------------------------------
+  #Para crear el .faa
+  Xfasta <- character(nrow(df_1235) * 2)
+  #>fig|666666.100001.peg.4834
+  #MNGTDVFASQAFARVMDRTREIYDIVVIDTPPVLVVPDARVIAQLADAVLFVVRWDSTLK
+  Xfasta[c(TRUE, FALSE)] <- paste(">", df_1235$feature_id, sep = "")
+  Xfasta[c(FALSE, TRUE)] <- df_1235$amino_acid
+  file_fasta <- writeLines(Xfasta, paste("Archivos_convertidos/",id_num,".faa",sep = ""))
   
-  
-  
+  file_fasta
+  msg<-message("Done.")
+  return(msg)
   #-------------------------------------------------------------------------------
-})
+}
 
 
+#lafun(fil3)
+#----------------------------------------------------------------------------------------
+dir <- 'Datos/03/03.Proteome_named_scaff/'
+allFiles <- list.files(dir)
+j<-paste(dir,allFiles,sep = "")
+for(f in allFiles){
+            print(paste(normalizePath(dirname(f)), fsep = .Platform$file.sep, f, sep = "")) 
+}
 
-
-
+lapply(j,lafun)
+class(j)

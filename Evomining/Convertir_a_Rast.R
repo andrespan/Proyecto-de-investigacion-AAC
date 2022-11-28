@@ -2,6 +2,9 @@
 #creamos una variable que tiene un solo un id, el identificador 2
 identificador2 <- ">5mSIPHEX1_0-scaffold_1104_c1_2"
 #identificador2
+n<-df_1235$species[1]
+name<-rast_ids[rast_ids$V4 == n,]
+id_num<-name$V1
 #--------------------------------------------------------------------------------
 #cargamos el archivo de las secuencias
 Secuencias_file <- readLines('Datos/5mSIPHEX1_0.faa')
@@ -178,9 +181,11 @@ dat_2
 #creamos un archivo fasta que tenga el feature_id y las secuencia de aminoacidos
 #la columna 2 "feature_id" del tsv de rast y amino_acid
 
-#Xfasta <- character(nrow(dat_2) * 2)
-#Xfasta[c(TRUE, FALSE)] <- paste(">",dat_2$feature_id,sep = "")
-#Xfasta[c(FALSE, TRUE)] <- dat_2$amino_acid
+Xfasta <- character(nrow(dat_2) * 2)
+#>gi|666666.100335.1|666666.100335|BINSIP5_0_Pacificitalea|NA|BINSIP5_0_Pacificitalea
+#LAEGANAKVLYGAGWVGVTKDNMADYDF
+Xfasta[c(TRUE, FALSE)] <- paste(">gi",gsub(".peg","",dat_2$feature_id),"|",dat_2$species,"|NA|",dat_2$species,sep = "")
+Xfasta[c(FALSE, TRUE)] <- dat_2$amino_acid
 
 #cramos el archivo 
 #file_fasta <- writeLines(Xfasta, "Archivos_convertidos/aminoacid_file.fasta")
