@@ -39,6 +39,7 @@ Idlist<- function(file){
 }
 
 #Corremos la funcion con el archivo
+
 listof_ids<- Idlist(Secuencias_file)
 listof_ids
 xvalue<-which(listof_ids == identificador2, arr.ind = TRUE)

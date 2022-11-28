@@ -208,7 +208,7 @@ lafun<-function(file) {
   n<-df_1235$species[1]
   name<-rast_ids[rast_ids$V4 == n,]
   id_num<-name$V1
-  rastable<-write.table(df_1235, paste("Archivos_convertidos/",id_num,".txt",sep = ""), append = TRUE, sep = '\t', dec = ".",
+  rastable<-write.table(df_1235, paste("Archivos_convertidos_prueba/",id_num,".txt",sep = ""), append = TRUE, sep = '\t', dec = ".",
               row.names = FALSE, col.names = TRUE, quote=FALSE)
   rastable
   #------------------------------------------------------------------------------
@@ -218,7 +218,7 @@ lafun<-function(file) {
   #MNGTDVFASQAFARVMDRTREIYDIVVIDTPPVLVVPDARVIAQLADAVLFVVRWDSTLK
   Xfasta[c(TRUE, FALSE)] <- paste(">", df_1235$feature_id, sep = "")
   Xfasta[c(FALSE, TRUE)] <- df_1235$amino_acid
-  file_fasta <- writeLines(Xfasta, paste("Archivos_convertidos/",id_num,".faa",sep = ""))
+  file_fasta <- writeLines(Xfasta, paste("Archivos_convertidos_prueba/",id_num,".faa",sep = ""))
   
   file_fasta
   msg<-message("Done.")
@@ -227,7 +227,7 @@ lafun<-function(file) {
 }
 
 
-#lafun(fil3)
+#lafun(fil2)
 #----------------------------------------------------------------------------------------
 dir <- 'Datos/03/03.Proteome_named_scaff/'
 allFiles <- list.files(dir)

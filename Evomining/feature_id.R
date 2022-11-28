@@ -91,7 +91,7 @@ library(dplyr)
 #  bind_rows                                       # Combine data sets into one data set 
 #data_all    
 one<-read.table("Datos/Corason_Rast.IDs",colClasses = "character")
-two<-read.table("Datos/rast_names.IDs",colClasses = "character")
+two<-read.table("Datos/Alphaproteobacteria_rastid.IDs",colClasses = "character")
 
 one
 dput(two$V2)
@@ -99,5 +99,5 @@ dput(one$V2)
 
 v<-bind_rows(one,two)
 v
-write.table(v , file =  "Datos/rast_merged.IDs", sep = "\t", dec = ".",
+write.table(v , file =  "Datos/Alphaproteobacteria_merged.IDs", sep = "\t", dec = ".",
              row.names = FALSE, col.names = FALSE, quote=FALSE)
