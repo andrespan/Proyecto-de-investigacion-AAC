@@ -2,9 +2,9 @@
 #creamos una variable que tiene un solo un id, el identificador 2
 identificador2 <- ">5mSIPHEX1_0-scaffold_1104_c1_2"
 #identificador2
-n<-df_1235$species[1]
-name<-rast_ids[rast_ids$V4 == n,]
-id_num<-name$V1
+#n<-df_1235$species[1]
+#name<-rast_ids[rast_ids$V4 == n,]
+#id_num<-name$V1
 #--------------------------------------------------------------------------------
 #cargamos el archivo de las secuencias
 Secuencias_file <- readLines('Datos/5mSIPHEX1_0.faa')
@@ -93,11 +93,12 @@ archivo_txt <- function(file2,file,list,id){
   feature<-paste("fig|",x$V2,".peg.",x_row,sep = "")
   #calcular especie
   specie<-lapply(x$V4,`[[`, 1)
+  speciesin_<-gsub("_"," ",specie)
   #Hacer un dataframe vacio
   df <- data.frame(matrix(ncol = 13, nrow = 0))
   colnames(df) <-c("contig_id",	"feature_id",	"type",	"location", "start",	"stop", "strand",	"locus_tag",	"figfam",	"species",	"nucleotide_sequence",	"amino_acid",	"sequence_accession")
   #rellenar las filas de el df
-  df[1,] <-c(contig_id,	feature,	"type",	"location", coordenada1, coordenada2, strand,	"unknown",	"figfam",	specie,	"nuc",	aminoacid, id_mod)
+  df[1,] <-c(contig_id,	feature,	"type",	"location", coordenada1, coordenada2, strand,	"unknown",	"figfam",	speciesin_,	"nuc",	aminoacid, id_mod)
   return (df)
 }
 #-------------------------------------------------------------------------------
@@ -112,7 +113,7 @@ lista_prueba <- c(">5mSIPHEX1_0-scaffold_1104_c1_1", ">5mSIPHEX1_0-scaffold_1104
 #con ldply corremos la funcion para una lista que contiene todos los Id
 #obtieniendo un una tabla con el ID, las cordenadas ,la anotacion y la secuencia
 library(plyr)
-df_1235<-ldply(.data = listof_ids,
+df_1235<-ldply(.data = lista_prueba,
                .fun= function(x) archivo_txt(rast_ids,Secuencias_file,listof_ids,x))
 
 
@@ -123,12 +124,15 @@ df_1235
 #incluimos la funcion ID_to_metabolic
 
 #con la funcion read_ko buscar en la tabla la columna 3 (el numero de KO)
-install.packages("devtools")
+#install.packages("devtools")
 library(devtools)
-install_github("mirnavazquez/RbiMs")
+#install_github("mirnavazquez/RbiMs")
 library("rbims")
 #dataframe proviene del output de la funcion read_ko 
-k0<-read_ko("Datos/02.KO_results/5mSIPHEX1_0.faa.txt")
+#rast_ids$V3
+n<-strsplit(lista_prueba[[1]][1],"-")[[1]][1]
+w<-gsub(">","",n)
+k0<-read_ko(paste("Datos/02.KO_results/",w,".faa.txt",sep = ""))
 
 #variable id de prueba
 id_prueba <- "5mSIPHEX1_0_scaffold_1104_c1_2"
@@ -183,11 +187,12 @@ dat_2
 #creamos un archivo fasta que tenga el feature_id y las secuencia de aminoacidos
 #la columna 2 "feature_id" del tsv de rast y amino_acid
 
-Xfasta <- character(nrow(dat_2) * 2)
+
+#Xfasta <- character(nrow(dat_2) * 2)
 #>gi|666666.100335.1|666666.100335|BINSIP5_0_Pacificitalea|NA|BINSIP5_0_Pacificitalea
 #LAEGANAKVLYGAGWVGVTKDNMADYDF
-Xfasta[c(TRUE, FALSE)] <- paste(">gi",gsub(".peg","",dat_2$feature_id),"|",dat_2$species,"|NA|",dat_2$species,sep = "")
-Xfasta[c(FALSE, TRUE)] <- dat_2$amino_acid
+#Xfasta[c(TRUE, FALSE)] <- paste(">gi",gsub(".peg","",dat_2$feature_id),"|",dat_2$species,"|NA|",dat_2$species,sep = "")
+#Xfasta[c(FALSE, TRUE)] <- dat_2$amino_acid
 
 #cramos el archivo 
 #file_fasta <- writeLines(Xfasta, "Archivos_convertidos/aminoacid_file.fasta")
@@ -195,16 +200,37 @@ Xfasta[c(FALSE, TRUE)] <- dat_2$amino_acid
 #--------------------------------------------------------------------------------
 #Para crear el archivo de rast
 #usar el nombre de numero
-n<-dat_2$species[1]
-name<-rast_ids[rast_ids$V4 == n,]
-id_num<-name$V1
-write.table(dat_2, paste("Archivos_convertidos/",id_num,".tsv"), append = TRUE, sep = '\t', dec = ".",
-            row.names = FALSE, col.names = TRUE, quote=FALSE)
+#n<-dat_2$species[1]
+#name<-rast_ids[rast_ids$V4 == n,]
+#id_num<-name$V1
+#write.table(dat_2, paste("Archivos_convertidos/",id_num,".tsv"), append = TRUE, sep = '\t', dec = ".",
+#           row.names = FALSE, col.names = TRUE, quote=FALSE)
 
 
 
 #-------------------------------------------------------------------------------
+#--------------------------------------------------------------------------------
+#Para crear el archivo de rast
+#usar el nombre de numero
 
+#n<-dat_2$species[1]
+rast_ids$V3
+name<-rast_ids[rast_ids$V3 == w,]
+name
+id_num<-name$V1
+rastable<-write.table(dat_2, paste("Archivos_convertidos_prueba/",id_num,".txt",sep = ""), append = TRUE, sep = '\t', dec = ".",
+                      row.names = FALSE, col.names = TRUE, quote=FALSE)
+rastable
+#------------------------------------------------------------------------------
+#Para crear el .faa
+Xfasta <- character(nrow(dat_2) * 2)
+#>fig|666666.100001.peg.4834
+#MNGTDVFASQAFARVMDRTREIYDIVVIDTPPVLVVPDARVIAQLADAVLFVVRWDSTLK
+Xfasta[c(TRUE, FALSE)] <- paste(">", dat_2$feature_id, sep = "")
+Xfasta[c(FALSE, TRUE)] <- dat_2$amino_acid
+file_fasta <- writeLines(Xfasta, paste("Archivos_convertidos_prueba/",id_num,".faa",sep = ""))
+
+file_fasta
 
 
 
