@@ -1,4 +1,9 @@
-# los feature_id van a ir 100000 20000000....420000
+# Esta funcion toma el archivo gtdbtk y regresa un archivo con los rastids de
+#la misma clase. Ejemplo:
+
+#418000	666666.418000	Pseudophaeobacter 700mSIPHEX2 13
+#429000	666666.429000	Celeribacter_B 5mSIPHEX1 0
+
 library("readr")
 #cargamos archive
 gtdbK_file <- read_tsv('Datos/gtdbtk.bac120.summary.tsv')

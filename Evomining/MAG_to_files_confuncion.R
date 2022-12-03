@@ -1,3 +1,11 @@
+###Esta funcion toma El directorio de secuencias de Proteomas obtenidas de prodigal,
+#el directorio de los outputs de KO y el archivo resultado de la 
+#funcion allrast_names_table y regresa un archivo anotado "rast-alike" + especie
+#y un fasta con los feature ids de rast simulados. Ejemplo:
+
+#contig_id	feature_id	type	location	start	stop	strand	function	locus_tag	figfam	species	nucleotide_sequence	amino_acid	sequence_accession
+#1009	fig|666666.176000.peg.2	type	location	10983	11219	+	NA	unknown	figfam	Planktomarina temperata5mSIPHEX1 1	nuc	TVPYIEVKNNSSRVEHEATTSKVDDDQLFYCRSRGMDEEEAVALVVNGFCKEVLQALPMEFAMEAQALVAISLEGSVG 5mSIPHEX1_1_scaffold_1009_c1_10
+
 #install.packages("devtools")
 library(devtools)
 #install_github("mirnavazquez/RbiMs")

@@ -1,4 +1,5 @@
-#mezclar los archivo rast.IDs
+#Esta funcion consiste en mezclar los archivo rast.IDs de la base de datos de NCBI y la generada 
+#por la funcion group_sametax_ids
 library(dplyr)
 #data_all <- list.files(path = "/Datos",  # Identify all CSV files
 #                      pattern = "*.IDs", full.names = TRUE) %>% 
