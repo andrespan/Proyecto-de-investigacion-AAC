@@ -1,3 +1,6 @@
+###este lapply se utilizo para los archivos de prueba sin tener los archivos completos de KO###
+###sin anotacion 
+###especies con "_"
 #install.packages("devtools")
 library(devtools)
 #install_github("mirnavazquez/RbiMs")

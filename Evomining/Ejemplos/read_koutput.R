@@ -1,3 +1,4 @@
+#Funcion read_koutput incorporada a convertir a rast y a lapply con funcion
 #con la funcion read_ko buscar en la tabla la columna 3 (el numero de KO)
 library(devtools)
 #install_github("mirnavazquez/RbiMs")

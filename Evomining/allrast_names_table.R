@@ -1,6 +1,10 @@
-# los feature_id van a ir 100000 20000000....420000
+#Esta funcion lee el archivo de gtdbtk y nos devuelve un archivo que contiene cuatro
+#columnas del rast id mas el nombre del genoma del usuario V3 para incorporarla al
+#archivo txt
+#    V1           V2             V3                                   v4
+#220000 666666.220000 700mSIPHEX2_9 Paracoccus sp000967825 700mSIPHEX2 9
 library("readr")
-#cargamos archive
+#cargamos archivo
 gtdbK_file <- read_tsv('Datos/gtdbtk.bac120.summary.tsv')
 #genome_example<-"700mSIPHEX2-concot_9"
 #--------------------------------------------------------------------------------
@@ -43,43 +47,28 @@ user_id <- function(table,id){
   bin_id<-paste(id_split[[1]][1],"_",id_split[[1]][3],sep = "")
   #Agregar bin_id al nombre de especie para diferenciar entre genomas. Ejemplo:
   #[1] "Sulfitobacter_sp001634775_5mSIPHEX2_25"
-  sp_rast<-paste(g_sp,"_",bin_id,sep = "")
+  sp_rast<-paste(g_sp,bin_id,sep = "")
   #Asignamos un numero de id basado en el index
   xvalue<-which(table == id, arr.ind = TRUE)
   x_row<-xvalue[1]
-  value_id<-format(as.numeric(x_row)*100000, scientific = FALSE)
+  row_size<- nchar(x_row)
+  if(nchar(x_row) == 1 ){
+    row_size<- as.numeric(x_row)*100000
+  } else {
+    if(nchar(x_row) == 2 ){
+      row_size<- as.numeric(x_row)*11000
+    }
+  }
+  value_id<-format(row_size, scientific = FALSE)
+  #value_id<-format(as.numeric(x_row)*100000, scientific = FALSE)
   feature_id<-paste("666666.",value_id,sep = "")
   #Hacer dataframe vacio y llenarlo.
-  #Hacer 3 dataframes
-  #df1<-Alphaproteobacteria
-  df1 <- data.frame(matrix(ncol = 4, nrow = 0))
-  colnames(df1) <-c("id_numero",	"feature_id","user_genome","gtdbk")
-  #df2<-Bacteroidia
-  df2 <- data.frame(matrix(ncol = 4, nrow = 0))
-  colnames(df2) <-c("id_numero",	"feature_id","user_genome","gtdbk")
-  #df3<-Gammaproteobacteria
-  df3 <- data.frame(matrix(ncol = 4, nrow = 0))
-  colnames(df3) <-c("id_numero",	"feature_id","user_genome","gtdbk")
-  c<-lapply(w,`[[`, 3)
-  d<-c
-  #if(c=="c__Alphaproteobacteria") {
-  #  df1[1,] <-c( value_id, feature_id, bin_id,	sp_rast)
-  #if(c=="c__Bacteroidia"){
-  #   df2[1,] <-c( value_id, feature_id, bin_id,	sp_rast)
-  if(c=="c__Gammaproteobacteria"){
-    df3[1,] <-c( value_id, feature_id, bin_id,	sp_rast)
-    }
-
-  
-  
-  Alphaproteobacteria<-select(df1, "id_numero", "feature_id", "gtdbk")
-  Bacteroidia<-select(df2, "id_numero", "feature_id", "gtdbk")
-  Gammaproteobacteria<-select(df3, "id_numero", "feature_id", "gtdbk")
-
-  return (Gammaproteobacteria)
+  df <- data.frame(matrix(ncol = 4, nrow = 0))
+  colnames(df) <-c("id_numero",	"feature_id","user_genome","gtdbk")
+  #rellenar las filas de el df
+  df[1,] <-c( value_id, feature_id, bin_id,	sp_rast)
+  return (df)
 }
-
-
 
 #user_id(gtdbK_file,genome_example)
 #-----------------------------------------------------------------------------------
@@ -88,56 +77,34 @@ user_id <- function(table,id){
 userg_list<-gtdbK_file$user_genome
 
 library(plyr)
-taxon_Alphaproteobacteria<- ldply(.data =userg_list,
+taxon_assig<- ldply(.data =userg_list,
                     .fun= function(x) user_id(gtdbK_file,x))
 
-
-taxon_Alphaproteobacteria
-###################################################################################
-taxon_Bacteroidia<- ldply(.data =userg_list,
-                                  .fun= function(x) user_id(gtdbK_file,x))
-
-
-taxon_Bacteroidia
-####################################################################################
-taxon_Gammaproteobacteria<- ldply(.data =userg_list,
-                          .fun= function(x) user_id(gtdbK_file,x))
-
-
-taxon_Gammaproteobacteria
-#library(tidyverse)
+taxon_assig
 #rast_ids<-select(taxon_assig, "id_numero", "feature_id", "gtdbk")
 #rast_ids
 #----------------------------------------------------------------------------------
 #simular un archivo de rast ids sin nombres de columnas
 #100000	666666.100000	700mSIPHEX1_15	Oleibacter_sp002733645_700mSIPHEX1_15
-#write.table(taxon_assig , file =  "Datos/rast_namesid.IDs", sep = "\t", dec = ".",
-#            row.names = FALSE, col.names = FALSE, quote=FALSE)
-library(tidyverse)
+write.table(taxon_assig , file =  "Datos/rast_namestable.IDs", sep = "\t", dec = ".",
+            row.names = FALSE, col.names = FALSE, quote=FALSE)
 
-
-write.table(taxon_Alphaproteobacteria , file =  "Datos/Alphaproteobacteria_rastid.IDs", sep = "\t", dec = ".",
-            row.names = FALSE, col.names = FALSE, quote=FALSE)
-write.table(taxon_Bacteroidia , file =  "Datos/Bacteroidia_rastid.IDs", sep = "\t", dec = ".",
-            row.names = FALSE, col.names = FALSE, quote=FALSE)
-write.table(taxon_Gammaproteobacteria , file =  "Datos/Gammaproteobacteria_rastid.IDs", sep = "\t", dec = ".",
-            row.names = FALSE, col.names = FALSE, quote=FALSE)
 #------------------------------------------------------------------------------------
 #mezclar los archivo rast.IDs
-library(dplyr)
+#library(dplyr)
 #data_all <- list.files(path = "/Datos",  # Identify all CSV files
 #                      pattern = "*.IDs", full.names = TRUE) %>% 
 #  lapply(read_csv) %>%                              # Store all files in list
 #  bind_rows                                       # Combine data sets into one data set 
 #data_all    
-one<-read.table("Datos/Corason_Rast.IDs",colClasses = "character")
-two<-read.table("Datos/rast_names.IDs",colClasses = "character")
+#one<-read.table("Datos/Corason_Rast.IDs",colClasses = "character")
+#two<-read.table("Datos/Alphaproteobacteria_rastid.IDs",colClasses = "character")
 
-one
-dput(two$V2)
-dput(one$V2)
+#one
+#dput(two$V2)
+#dput(one$V2)
 
-v<-bind_rows(one,two)
-v
-write.table(v , file =  "Datos/rast_merged.IDs", sep = "\t", dec = ".",
-            row.names = FALSE, col.names = FALSE, quote=FALSE)
+#v<-bind_rows(one,two)
+#v
+#write.table(v , file =  "Datos/Alphaproteobacteria_merged.IDs", sep = "\t", dec = ".",
+#            row.names = FALSE, col.names = FALSE, quote=FALSE)

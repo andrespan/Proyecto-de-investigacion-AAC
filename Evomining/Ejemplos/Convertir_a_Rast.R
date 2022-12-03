@@ -1,4 +1,4 @@
-
+######Funcion convertir a rast integrada a lapply_con_funcion/"funcion final"###################
 #creamos una variable que tiene un solo un id, el identificador 2
 identificador2 <- ">5mSIPHEX1_0-scaffold_1104_c1_2"
 #identificador2
