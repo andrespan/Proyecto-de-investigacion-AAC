@@ -1,6 +1,7 @@
 ---
 title: "Anotacion terminal"
-output: html_document
+output:
+  github_document: default
 ---
 
 ```{r setup, include=FALSE}
