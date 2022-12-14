@@ -1,10 +1,10 @@
 Bases de datos 
 
-f__Alcanivoracaceae  
-f__Alteromonadaceae 
-f__Flavobacteriaceae 
-f__Hyphomonadaceae 
-f__Oleiphilaceae  
-f__Rhodobacteraceae  
-f__Saccharospirillaceae  
+f__Alcanivoracaceae: https://www.ncbi.nlm.nih.gov/data-hub/genome/?taxon=224372&typical_only=true&assembly_level=1%3A3  
+f__Alteromonadaceae: https://www.ncbi.nlm.nih.gov/data-hub/genome/?taxon=72275&typical_only=true&assembly_level=1%3A3
+f__Flavobacteriaceae: https://www.ncbi.nlm.nih.gov/data-hub/genome/?taxon=49546&reference_only=true&typical_only=true&assembly_level=1%3A3 
+f__Hyphomonadaceae: https://www.ncbi.nlm.nih.gov/data-hub/genome/?taxon=69657&typical_only=true&assembly_level=1%3A3 
+f__Oleiphilaceae: https://www.ncbi.nlm.nih.gov/data-hub/genome/?taxon=191033&typical_only=true  
+f__Rhodobacteraceae: https://www.ncbi.nlm.nih.gov/data-hub/genome/?taxon=31989&reference_only=true&typical_only=true  
+f__Saccharospirillaceae: https://www.ncbi.nlm.nih.gov/data-hub/genome/?taxon=255527&typical_only=true  
 5mSIPHEX1_2 f__UBA7239  o__Pseudomonadales
