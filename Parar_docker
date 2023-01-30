@@ -1,0 +1,4 @@
+docker stop $(docker ps -a -q)
+docker rm $(docker ps -a -q)
+
+perl startEvoMining.pl -c ActinosOriginal -g converted_evo_genomes -r Alcanivoracaceae_bins_merged.IDs
