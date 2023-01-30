@@ -3,9 +3,9 @@
 #ruta al directorio de entrada
 inputdir  <- "Archivos_convertidos_prueba"  
 #ruta al directorio de salida
-targetdir <- "Alphaproteobacteria1"  
+targetdir <- "Hyphomonadaceae_bins"  
 #aqui se carga el archivo de ids rast-alike
-df <- readLines("Datos/Alphaproteobacteria_rastid2.IDs")
+df <- readLines("Datos/ids_by_family/Hyphomonadaceae_bins.IDs")
 #df
 #dividimos las columnas del archivo por tabulador
 v1<-strsplit(df, '\t')

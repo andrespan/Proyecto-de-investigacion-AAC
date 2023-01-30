@@ -75,21 +75,18 @@ user_id <- function(table,id){
   colnames(df3) <-c("id_numero",	"feature_id","user_genome","gtdbk")
   c<-lapply(w,`[[`, 3)
   d<-c
-  if(c=="c__Alphaproteobacteria") {
+  if(c=="c__Alphaproteobacteria"){
     df1[1,] <-c( value_id, feature_id, bin_id,	sp_rast)
-  #if(c=="c__Bacteroidia"){
-  #   df2[1,] <-c( value_id, feature_id, bin_id,	sp_rast)
-  #if(c=="c__Gammaproteobacteria"){
-  #  df3[1,] <-c( value_id, feature_id, bin_id,	sp_rast)
-  }
-  
-  
+    } else if(c=="c__Bacteroidia") {
+      df2[1,] <-c( value_id, feature_id, bin_id,	sp_rast)
+      }else if(c=="c__Gammaproteobacteria") {
+        df3[1,] <-c( value_id, feature_id, bin_id,	sp_rast)
+    }
   
   Alphaproteobacteria<-select(df1, "id_numero", "feature_id", "gtdbk")
   Bacteroidia<-select(df2, "id_numero", "feature_id", "gtdbk")
   Gammaproteobacteria<-select(df3, "id_numero", "feature_id", "gtdbk")
   
-  return (Alphaproteobacteria)
 }
 
 

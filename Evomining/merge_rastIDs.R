@@ -6,8 +6,8 @@ library(dplyr)
 #  lapply(read_csv) %>%                              # Store all files in list
 #  bind_rows                                       # Combine data sets into one data set 
 #data_all    
-one<-readLines("Datos/Corason_nospace_rast.IDs")#colClasses = "character")
-two<-readLines("Datos/Alphaproteobacteria_rastid2.IDs")#,colClasses = "character")
+one<-readLines("Corason_Alcanivoracaceae_Rast.IDs")#colClasses = "character")
+two<-readLines("Datos/ids_by_family/Alcanivoracaceae_bins.IDs")#,colClasses = "character")
 
 one
 class(two)
@@ -19,6 +19,6 @@ v<-c(one,two)
 v
 
 
-writeLines(v, "Datos/Alpha_merged0.IDs")
+writeLines(v, "Datos/Merged_id_files/Alcanivoracaceae_bins_merged.IDs")
 #write.table(v , file =  "Datos/Alpha_merged0.IDs", sep = "\t", dec = ".",
 #            row.names = FALSE, col.names = FALSE, quote=FALSE)
