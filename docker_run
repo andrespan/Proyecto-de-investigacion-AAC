@@ -1,0 +1,2 @@
+perl startEvoMining.pl -c ActinosOriginal -g 09.160_al_200 -r 160_199_flavo.IDs
+perl startEvoMining.pl -c ActinosOriginal -g 12.bins_r -r rhodo.IDs
