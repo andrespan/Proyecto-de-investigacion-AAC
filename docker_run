@@ -2,3 +2,7 @@ perl startEvoMining.pl -c ActinosOriginal -g 09.160_al_200 -r 160_199_flavo.IDs
 perl startEvoMining.pl -c ActinosOriginal -g 12.bins_r -r rhodo.IDs
 
 perl startEvoMining.pl -c  ActinosOriginal1 -g 10.1_al_379 -r 1_379.IDs
+
+
+Error en rhodo > 100084	666666.100084	Maritimibacter harenae GCA 009882975
+                100085	666666.100085	Maritimibacter lacisalsi GCA 014640115 > ya tiene otro nombre en el faa.evo |Citreicella_marina_GCA_900100085 ?
