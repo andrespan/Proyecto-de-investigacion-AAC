@@ -1,8 +1,4 @@
----
-title: "Natural products"
-output: html_document
-date: "`r Sys.Date()`"
----
+###Natural Products###
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
