@@ -1,8 +1,5 @@
 ### Natural Products
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
 
 Asi es como corrí el archivo desde el Docker: 
 
