@@ -1,0 +1,14 @@
+ls -d ../families_DB/*ceae > lineagelist.txt
+
+en vi :%s/\.\.\/families_DB\///g
+
+
+ cat lineagelist.txt | while read line; do mkdir -p $line/data_get; ln -s /home/andres/families_DB/$line/02*/*.gbk $line/data_get; ln -s /home/andres/families_DB/$line/04*/*.faa $line/data_get;  done
+
+cat lineagelist.txt | while read line; do mkdir -p $line/data_get; ln -s /home/andres/families_DB/$line/02*/*.gbk $line/data_get; ln -s /home/andres/families_DB/$line/04*/*.faa $line/data_get; get_homologues.pl -d $line/data_get; done
+
+
+"Keystone genes" 
+
+easy numbers brenda
+cuatro digitos 
